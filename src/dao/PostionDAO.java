@@ -74,7 +74,6 @@ public class PostionDAO {
 
         return null;
     }
-    
  public Postion getPostionByName(String name) throws SQLException {
 
         Connection connection = JDBCConnection.getJDBCConnection();
