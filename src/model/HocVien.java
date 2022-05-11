@@ -1,4 +1,4 @@
-package Camel.model;
+package model;
 
 import java.io.Serializable;
 import java.sql.Date;

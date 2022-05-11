@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Camel.view;
+package view;
 
-import Camel.model.Postion;
-import Camel.service.PostionService;
-import Camel.view.CRUD_View.Postion_Add;
-import Camel.view.CRUD_View.Postion_Edit;
+import model.Postion;
+import service.PostionService;
+import view.CRUD_View.Postion_Add;
+import view.CRUD_View.Postion_Edit;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;

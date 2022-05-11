@@ -1,4 +1,4 @@
-package Camel.bean;
+package bean;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

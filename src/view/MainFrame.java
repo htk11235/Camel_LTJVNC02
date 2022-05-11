@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Camel.view;
+package view;
 
-import Camel.bean.DanhMucBean;
-import Camel.controller.ChuyenManHinh;
+import bean.DanhMucBean;
+import controller.ChuyenManHinh;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +87,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel_Department.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Department.setText("Department");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/376915 (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/376915 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2_DepartementLayout = new javax.swing.GroupLayout(jPanel2_Departement);
         jPanel2_Departement.setLayout(jPanel2_DepartementLayout);
@@ -118,7 +118,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1_Employee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1_Employee.setText("Employee");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/6186048 (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/6186048 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1_EmployeeLayout = new javax.swing.GroupLayout(jPanel1_Employee);
         jPanel1_Employee.setLayout(jPanel1_EmployeeLayout);
@@ -149,7 +149,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1_Timekeeping.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1_Timekeeping.setText("Timekeeping");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/favpng_timesheet-icon-design (1).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/favpng_timesheet-icon-design (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1_TimekeepingLayout = new javax.swing.GroupLayout(jPanel1_Timekeeping);
         jPanel1_Timekeeping.setLayout(jPanel1_TimekeepingLayout);
@@ -181,7 +181,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel1_Postion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1_Postion.setText("Postion");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/1570970 (1).png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1570970 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1_PostionLayout = new javax.swing.GroupLayout(jPanel1_Postion);
         jPanel1_Postion.setLayout(jPanel1_PostionLayout);
@@ -211,7 +211,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel_Salary.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Salary.setText("Salary");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/3135706 (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/3135706 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2_SalaryLayout = new javax.swing.GroupLayout(jPanel2_Salary);
         jPanel2_Salary.setLayout(jPanel2_SalaryLayout);
@@ -242,7 +242,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1_Logo.setBackground(new java.awt.Color(238, 238, 238));
         jPanel1_Logo.setPreferredSize(new java.awt.Dimension(0, 80));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Camel/img/Camel_logo_camel-700x946 (2).png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Camel_logo_camel-700x946 (2).png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("MV Boli", 0, 36)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -372,11 +372,13 @@ public class MainFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+               
                 try {
                     new MainFrame().setVisible(true);
                 } catch (SQLException ex) {
                     Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
+               
             }
         });
     }

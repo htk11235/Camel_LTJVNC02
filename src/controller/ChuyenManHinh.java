@@ -1,23 +1,17 @@
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Camel.controller;
+package controller;
 import java.util.List;
-import Camel.bean.DanhMucBean;
+import bean.DanhMucBean;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import Camel.view.DepartmentJPanel;
-import Camel.view.EmployeeJPanel;
-import Camel.view.PostionJPanel;
-import Camel.view.SalaryJPanel;
-import Camel.view.TimekeepingJPanel;
+import view.DepartmentJPanel;
+import view.EmployeeJPanel;
+import view.PostionJPanel;
+import view.SalaryJPanel;
+import view.TimekeepingJPanel;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -77,7 +71,6 @@ import java.util.logging.Logger;
                               }
                           }
                               break;
-
                           case "Employee":
                               panel = new EmployeeJPanel();
                               break;

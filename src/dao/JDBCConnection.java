@@ -1,4 +1,4 @@
-package Camel.dao;
+package dao;
 
 import java.sql.*;
 

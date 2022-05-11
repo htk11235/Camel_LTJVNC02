@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Camel.service;
+package service;
 
-import Camel.dao.DepartmentDAO;
+import dao.DepartmentDAO;
 import java.sql.SQLException;
 import java.util.List;
-import Camel.model.Department;
+import model.Department;
 
 /**
  *

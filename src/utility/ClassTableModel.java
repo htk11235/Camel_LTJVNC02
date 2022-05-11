@@ -1,6 +1,6 @@
-package Camel.utility;
+package utility;
 
-import Camel.model.HocVien;
+import model.HocVien;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
