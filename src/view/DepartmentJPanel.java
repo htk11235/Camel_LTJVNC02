@@ -7,6 +7,7 @@ package view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.TextField;
 import model.Department;
 import service.DepartmentService;
 import view.CRUD_View.Department_Add;
@@ -119,6 +120,12 @@ public class DepartmentJPanel extends javax.swing.JPanel {
         jPanel1_table.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1_table.setForeground(new java.awt.Color(255, 255, 255));
 
+        jTextField_search_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_search_12KeyPressed(evt);
+            }
+        });
+
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -188,22 +195,20 @@ public class DepartmentJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1_tableLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_tableLayout.createSequentialGroup()
+                    .addGroup(jPanel1_tableLayout.createSequentialGroup()
                         .addComponent(jButton_Add_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Del_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(380, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_tableLayout.createSequentialGroup()
-                        .addGroup(jPanel1_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1_tableLayout.createSequentialGroup()
-                                .addComponent(jTextField_search_12, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(298, 298, 298)
-                                .addComponent(jButton_Refresh_12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap(26, Short.MAX_VALUE))))
+                        .addComponent(jButton_Del_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1_tableLayout.createSequentialGroup()
+                            .addComponent(jTextField_search_12, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(298, 298, 298)
+                            .addComponent(jButton_Refresh_12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1_tableLayout.setVerticalGroup(
             jPanel1_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,6 +293,10 @@ public class DepartmentJPanel extends javax.swing.JPanel {
             Logger.getLogger(DepartmentJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_Del_12ActionPerformed
+
+    private void jTextField_search_12KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_search_12KeyPressed
+        searchTable(jTextField_search_12.getText());
+    }//GEN-LAST:event_jTextField_search_12KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

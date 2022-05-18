@@ -4,17 +4,46 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Jonny Dam
  */
 public class TimekeepingJPanel extends javax.swing.JPanel {
-
+    
     /**
      * Creates new form TimekeepingJPanel
      */
+    DefaultTableModel defaultTableModel;
     public TimekeepingJPanel() {
         initComponents();
+         defaultTableModel = new DefaultTableModel();
+                //design table
+         jTable1.setModel(defaultTableModel);
+        jTable1.getTableHeader().setOpaque(false);
+        
+//        header design
+            DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
+       headerRenderer.setBackground(new Color(102,102,102));
+       headerRenderer.setForeground(Color.white);
+       for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
+               jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+       }
+       //design column 
+       jTable1.setGridColor(new Color (51,51,51));
+        jTable1.getTableHeader().setFont(new Font("Tohoma", Font.BOLD, 14));
+        jTable1.getTableHeader().setPreferredSize(new Dimension(100, 50));
+        jTable1.setRowHeight(30);
+        jTable1.validate();
+        jTable1.repaint();
+        jTable1.setOpaque(true);
+        jTable1.setFillsViewportHeight(true);
+        jTable1.setBackground( new Color(255,255,255));
     }
 
     /**
@@ -27,8 +56,26 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(119, 119, 119));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
         jLabel1.setText("timekeeping");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -36,19 +83,27 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 211, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 104, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

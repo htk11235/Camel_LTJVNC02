@@ -88,16 +88,17 @@ public class EmployeeDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO employees(employee_Name,department_Id,postion_Id,sex,birthday,email,tel) VALUES(?,?,?,?,?,?,?)";
-
+        String sql = "INSERT INTO employees VALUES(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, employee.getEmployee_Name());
             preparedStatement.setInt(2, employee.getDepartment_Id());
+            preparedStatement.setInt(3, employee.getPosition_Id());
             preparedStatement.setString(4, employee.getSex());
             preparedStatement.setDate(5, (Date) employee.getBirthday());
             preparedStatement.setString(6, employee.getEmail());
             preparedStatement.setString(7, employee.getTel());
+             preparedStatement.setInt(8, 1);
             int rs = preparedStatement.executeUpdate();
             System.out.println(rs);
             return rs;

@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import model.Employee;
 import service.DepartmentService;
 import service.EmployeeService;
@@ -15,6 +18,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -57,7 +61,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         defaultTableModel.addColumn("id");
         defaultTableModel.addColumn("name");
         defaultTableModel.addColumn("department");
-        defaultTableModel.addColumn("postion");
+        defaultTableModel.addColumn("position");
         defaultTableModel.addColumn("sex");
         defaultTableModel.addColumn("email");
         defaultTableModel.addColumn("tel");
@@ -66,12 +70,33 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
+              //design table
+         jTable_16.setModel(defaultTableModel);
+        jTable_16.getTableHeader().setOpaque(false);
+        
+//        header design
+            DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
+       headerRenderer.setBackground(new Color(102,102,102));
+       headerRenderer.setForeground(Color.white);
+       for (int i = 0; i < jTable_16.getModel().getColumnCount(); i++) {
+               jTable_16.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+       }
+       //design column 
+       jTable_16.setGridColor(new Color (51,51,51));
+        jTable_16.getTableHeader().setFont(new Font("Tohoma", Font.BOLD, 18));
+        jTable_16.getTableHeader().setPreferredSize(new Dimension(100, 50));
+        jTable_16.setRowHeight(30);
+        jTable_16.validate();
+        jTable_16.repaint();
+        jTable_16.setOpaque(true);
+        jTable_16.setFillsViewportHeight(true);
+        jTable_16.setBackground( new Color(255,255,255));
     }
 
     private void setTableData(List<Employee> Employees) {
         for (Employee Employee : Employees) {
             try {
-                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),Employee.getSex(),Employee.getEmail(),Employee.getTel()});
+                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),postionService.getPostionById(Employee.getPosition_Id()).getPostion_Name(),Employee.getSex(),Employee.getEmail(),Employee.getTel()});
             } catch (SQLException ex) {
                 Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -98,7 +123,6 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jTextField_search_16 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_16 = new javax.swing.JTable();
@@ -108,7 +132,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         jButton_Del_16 = new javax.swing.JButton();
         jLabel_DpScreen_16 = new javax.swing.JLabel();
 
-        jLabel1.setText("Search");
+        setPreferredSize(new java.awt.Dimension(899, 598));
 
         jTextField_search_16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +145,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
+        jTable_16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTable_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -132,6 +157,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable_16.setShowGrid(true);
         jScrollPane1.setViewportView(jTable_16);
 
         jButton_Refresh_16.setText("Refresh");
@@ -172,7 +198,9 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel_DpScreen_16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel_DpScreen_16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel_DpScreen_16.setForeground(new java.awt.Color(119, 119, 119));
+        jLabel_DpScreen_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoir_group.png"))); // NOI18N
         jLabel_DpScreen_16.setText("Employee Screen");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -185,39 +213,32 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel_DpScreen_16)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton_Refresh_16))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))
-                                .addContainerGap())))))
+                        .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_Refresh_16)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel_DpScreen_16, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Refresh_16))
+                    .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Refresh_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,7 +297,6 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Del_16;
     private javax.swing.JButton jButton_Edit_16;
     private javax.swing.JButton jButton_Refresh_16;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_DpScreen_16;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_16;

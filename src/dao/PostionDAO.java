@@ -12,42 +12,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Poisition_Employee;
 
 /**
  *
  * @author htk11
  */
 public class PostionDAO {
-     public List<Poisition_Employee> getAllPostion_Employee() throws SQLException {
-        List<Poisition_Employee> Poisition_Employee = new ArrayList<Poisition_Employee>();
-
-        Connection connection = JDBCConnection.getJDBCConnection();
-
-        String sql = "select employee_Name,position_Name\n" +
-"from positions p,employees e,employees_positions ep\n" +
-"where ep.employee_Id = e.employee_Id and p.position_Id = ep.position_Id";
-
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            ResultSet rs = preparedStatement.executeQuery();
-
-            while (rs.next()) {
-                 Poisition_Employee pe_child = new Poisition_Employee();
-                 pe_child.setEmployee_Name(rs.getString("employee_Name"));
-                 pe_child.setPostion_Name(rs.getString("position_Name"));
-               
-                Poisition_Employee.add(pe_child);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return Poisition_Employee;
-    }
-    
      public List<Postion> getAllPostion() throws SQLException {
         List<Postion> Poisition_Employee = new ArrayList<Postion>();
 
@@ -78,7 +48,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM  postions WHERE postion_Id = ?";
+        String sql = "SELECT * FROM  positions WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -89,8 +59,8 @@ public class PostionDAO {
                 Postion postion = new Postion();
                 preparedStatement.setInt(1, id);
 
-                postion.setPostion_Id(rs.getInt("postion_Id"));
-                postion.setPostion_Name(rs.getString("postion_Name"));
+                postion.setPostion_Id(rs.getInt("position_Id"));
+                postion.setPostion_Name(rs.getString("position_Name"));
              
                 return postion;
             }
@@ -105,7 +75,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM  postions WHERE postion_Name = ?";
+        String sql = "SELECT * FROM  positions WHERE position_Name = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -116,8 +86,8 @@ public class PostionDAO {
                 Postion postion = new Postion();
                 preparedStatement.setString(1, name);
 
-                postion.setPostion_Id(rs.getInt("postion_Id"));
-                postion.setPostion_Name(rs.getString("postion_Name"));
+                postion.setPostion_Id(rs.getInt("position_Id"));
+                postion.setPostion_Name(rs.getString("position_Name"));
              
                 return postion;
             }
@@ -132,7 +102,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO postions(postion_Name) VALUES(?)";
+        String sql = "INSERT INTO positions(postion_Name) VALUES(?)";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -152,7 +122,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE postions SET postion_Name = ? WHERE postion_Id = ?";
+        String sql = "UPDATE postions SET postion_Name = ? WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -174,7 +144,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "DELETE FROM postions WHERE postion_Id = ?";
+        String sql = "DELETE FROM postions WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
