@@ -15,6 +15,7 @@ import view.TimekeepingJPanel;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.border.MatteBorder;
 /**
  *
  * @author Jonny Dam
@@ -30,9 +31,10 @@ import java.util.logging.Logger;
                     
             public void setDashboard(JPanel jpnItem, JLabel jlbItem) throws SQLException {
                kindSelected = "Department";
-               jpnItem.setBackground(new Color(0, 118, 104));
-               jlbItem.setBackground(new Color(0, 118, 104));
+
+               jlbItem.setForeground(new Color(255, 154, 99));
                JPanel node = new DepartmentJPanel();
+               
                jpbView.removeAll();
                jpbView.setLayout(new BorderLayout());
                jpbView.add(node);
@@ -105,26 +107,25 @@ import java.util.logging.Logger;
                 @Override
                 public void mousePressed(MouseEvent e) {
                      kindSelected = kind;
-                     jpnItem.setBackground(new Color(0, 118, 104));
-                     jlbItem.setBackground(new Color(0, 118, 104));
+//                     jpnItem.setBackground(new Color(0, 118, 104));
+                     jlbItem.setForeground(new Color(255, 154, 99));
+                                         jpnItem.setBorder(new MatteBorder(0, 0, 1, 0, Color.black));
                 }
 
                 @Override
                 public void mouseReleased(MouseEvent e) {
-
+//                             jpnItem.setBorder(null);
                 }
 
                 @Override
                 public void mouseEntered(MouseEvent e) {
-                    jpnItem.setBackground(new Color(0, 118, 104));
-                    jlbItem.setBackground(new Color(0, 118, 104));
+                    jpnItem.setBorder(new MatteBorder(0, 0, 1, 0, Color.black));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e) {
                     if (!kindSelected.equalsIgnoreCase(kind)) {
-                          jpnItem.setBackground(new Color(99, 99, 99));
-                          jlbItem.setBackground(new Color(99, 99, 99));
+                          jpnItem.setBorder(null);
                     }
                 }
                 
@@ -132,11 +133,11 @@ import java.util.logging.Logger;
         private void setChangeBackground(String kind){
             for(DanhMucBean item : listDanhMuc){
                 if(item.getKind().equalsIgnoreCase(kind)){
-                    item.getJpn().setBackground(new Color(0,118,104));
-                    item.getJpn().setBackground(new Color(0,118,104));
+                    item.getJlb ().setForeground(new Color(255, 154, 99));
+                    item.getJpn().setBorder(new MatteBorder(0, 0, 1, 0, Color.black));
                 }else{
-                     item.getJpn().setBackground (new Color (99, 99, 99));
-                     item.getJlb ().setBackground (new Color (99, 99, 99));
+                    item.getJlb ().setForeground(new Color(119, 119, 119));
+                    item.getJpn().setBorder(null);
                 }
             }
         }

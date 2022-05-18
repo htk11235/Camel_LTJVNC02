@@ -12,18 +12,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.Poisition_Employee;
 
 /**
  *
  * @author htk11
  */
 public class PostionDAO {
-     public List<Postion> getAllPostion() throws SQLException {
-        List<Postion> postions = new ArrayList<Postion>();
+     public List<Poisition_Employee> getAllPostion_Employee() throws SQLException {
+        List<Poisition_Employee> Poisition_Employee = new ArrayList<Poisition_Employee>();
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM postions Order By postion_Id";
+        String sql = "select employee_Name,position_Name\n" +
+"from positions p,employees e,employees_positions ep\n" +
+"where ep.employee_Id = e.employee_Id and p.position_Id = ep.position_Id";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -31,22 +34,46 @@ public class PostionDAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Postion postion = new Postion();
-
-                postion.setPostion_Id(rs.getInt("postion_Id"));
-                postion.setPostion_Name(rs.getString("postion_Name"));
+                 Poisition_Employee pe_child = new Poisition_Employee();
+                 pe_child.setEmployee_Name(rs.getString("employee_Name"));
+                 pe_child.setPostion_Name(rs.getString("position_Name"));
                
-                postions.add(postion);
+                Poisition_Employee.add(pe_child);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return postions;
+        return Poisition_Employee;
     }
     
+     public List<Postion> getAllPostion() throws SQLException {
+        List<Postion> Poisition_Employee = new ArrayList<Postion>();
 
+        Connection connection = JDBCConnection.getJDBCConnection();
+
+        String sql = "select * from positions order by position_Id asc";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                 Postion pos_child = new Postion();
+                 pos_child.setPostion_Id(rs.getInt("position_Id"));
+                 pos_child.setPostion_Name(rs.getString("position_Name"));
+               
+                Poisition_Employee.add(pos_child);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return Poisition_Employee;
+    }
     public Postion getPostionById(int id) throws SQLException {
 
         Connection connection = JDBCConnection.getJDBCConnection();

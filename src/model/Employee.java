@@ -15,7 +15,6 @@ public class Employee {
     private int employee_Id;
     private String employee_Name;
     private int department_Id;
-    private int postion_Id;
     private String sex;
     private Date birthday;
     private String email;
@@ -44,15 +43,6 @@ public class Employee {
     public void setDepartment_Id(int department_Id) {
         this.department_Id = department_Id;
     }
-
-    public int getPostion_Id() {
-        return postion_Id;
-    }
-
-    public void setPostion_Id(int postion_Id) {
-        this.postion_Id = postion_Id;
-    }
-
     public String getSex() {
         return sex;
     }
