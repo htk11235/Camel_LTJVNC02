@@ -77,11 +77,11 @@ public class Employee_Edit extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Employee_Edit.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try {
-            jComboBox_Pos_16.setSelectedItem(postionService.getPostionById(employeeService.getEmployeeById(x).getPostion_Id()).getPostion_Name());
-        } catch (SQLException ex) {
-            Logger.getLogger(Employee_Edit.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            jComboBox_Pos_16.setSelectedItem(postionService.getPostionById(employeeService.getEmployeeById(x).getPostion_Id()).getPostion_Name());
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Employee_Edit.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         try {
             jComboBox_Sex_16.setSelectedItem(employeeService.getEmployeeById(x).getSex());
         } catch (SQLException ex) {
@@ -340,11 +340,11 @@ public class Employee_Edit extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Employee_Add.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try {
-            emp.setPostion_Id(postionService.getPostionByName(String.valueOf(jComboBox_Pos_16.getSelectedItem())).getPostion_Id());
-        } catch (SQLException ex) {
-            Logger.getLogger(Employee_Add.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            emp.setPostion_Id(postionService.getPostionByName(String.valueOf(jComboBox_Pos_16.getSelectedItem())).getPostion_Id());
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Employee_Add.class.getName()).log(Level.SEVERE, null, ex);
+//        }
        emp.setSex(String.valueOf(jComboBox_Sex_16.getSelectedItem()));
        emp.setBirthday(new java.sql.Date(ngaysinh.getTime()));
        emp.setEmail(name_TextFiled_Email_16.getText());

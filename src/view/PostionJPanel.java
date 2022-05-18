@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import model.Poisition_Employee;
 
 /**
  *
@@ -48,16 +49,16 @@ public class PostionJPanel extends javax.swing.JPanel {
         jTable_16.setModel(defaultTableModel);
         defaultTableModel.addColumn("id");
         defaultTableModel.addColumn("name");
-        setTableData(postionService.getAllPostion());
+        setTableData(postionService.getAllPostion_Employee());
     }
 
-    private void setTableData(List<Postion> postion) {
-        for (Postion Postion : postion) {
-            defaultTableModel.addRow(new Object[]{Postion.getPostion_Id(), Postion.getPostion_Name()});
+    private void setTableData(List<Poisition_Employee> postion) {
+        for (Poisition_Employee Postion : postion) {
+            defaultTableModel.addRow(new Object[]{Postion.getEmployee_Name(), Postion.getPostion_Name()});
         }
     }
 
-    private void refreshTableData(List<Postion> postion) {
+    private void refreshTableData(List<Poisition_Employee> postion) {
         defaultTableModel.setRowCount(0);
         setTableData(postion);
     }
@@ -211,7 +212,7 @@ public class PostionJPanel extends javax.swing.JPanel {
        
       
         try {
-            refreshTableData(postionService.getAllPostion());
+            refreshTableData(postionService.getAllPostion_Employee());
         } catch (SQLException ex) {
             Logger.getLogger(PostionJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -236,7 +237,7 @@ public class PostionJPanel extends javax.swing.JPanel {
         
         try {
             postionService.deletePostion(id);
-            refreshTableData(postionService.getAllPostion());
+            refreshTableData(postionService.getAllPostion_Employee());
         } catch (SQLException ex) {
             Logger.getLogger(PostionJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }

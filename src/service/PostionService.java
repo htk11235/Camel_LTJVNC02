@@ -8,6 +8,7 @@ import dao.PostionDAO;
 import model.Postion;
 import java.sql.SQLException;
 import java.util.List;
+import model.Poisition_Employee;
 
 /**
  *
@@ -20,10 +21,12 @@ public class PostionService {
         posDAO = new PostionDAO();
     }
 
-    public List<Postion> getAllPostion() throws SQLException {
+    public List<Poisition_Employee> getAllPostion_Employee() throws SQLException {
+        return posDAO.getAllPostion_Employee();
+    }
+  public List<Postion> getAllPostion() throws SQLException {
         return posDAO.getAllPostion();
     }
-
     public Postion getPostionById(int id) throws SQLException {
         return posDAO.getPostionById(id);
     }

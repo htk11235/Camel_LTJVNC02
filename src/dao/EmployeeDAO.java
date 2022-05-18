@@ -37,7 +37,6 @@ public class EmployeeDAO {
                 employee.setEmployee_Id(rs.getInt("employee_Id"));
                 employee.setEmployee_Name(rs.getString("employee_Name"));
                 employee.setDepartment_Id(rs.getInt("department_Id"));
-                employee.setPostion_Id(rs.getInt("postion_Id"));
                 employee.setSex(rs.getString("sex"));
                 employee.setBirthday(rs.getDate("birthday"));
                 employee.setEmail(rs.getString("email"));
@@ -70,7 +69,6 @@ public class EmployeeDAO {
                 employee.setEmployee_Id(rs.getInt("employee_Id"));
                 employee.setEmployee_Name(rs.getString("employee_Name"));
                 employee.setDepartment_Id(rs.getInt("department_Id"));
-                employee.setPostion_Id(rs.getInt("postion_Id"));
                 employee.setSex(rs.getString("sex"));
                 employee.setBirthday(rs.getDate("birthday"));
                 employee.setEmail(rs.getString("email"));
@@ -96,7 +94,6 @@ public class EmployeeDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, employee.getEmployee_Name());
             preparedStatement.setInt(2, employee.getDepartment_Id());
-            preparedStatement.setInt(3, employee.getPostion_Id());
             preparedStatement.setString(4, employee.getSex());
             preparedStatement.setDate(5, (Date) employee.getBirthday());
             preparedStatement.setString(6, employee.getEmail());
@@ -120,7 +117,6 @@ public class EmployeeDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
              preparedStatement.setString(1, employee.getEmployee_Name());
             preparedStatement.setInt(2, employee.getDepartment_Id());
-            preparedStatement.setInt(3, employee.getPostion_Id());
             preparedStatement.setString(4, employee.getSex());
             preparedStatement.setDate(5, (Date) employee.getBirthday());
             preparedStatement.setString(6, employee.getEmail());
