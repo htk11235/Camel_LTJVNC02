@@ -98,7 +98,7 @@ public class EmployeeDAO {
             preparedStatement.setDate(5, (Date) employee.getBirthday());
             preparedStatement.setString(6, employee.getEmail());
             preparedStatement.setString(7, employee.getTel());
-             preparedStatement.setInt(8, 1);
+             preparedStatement.setString(8, "1");
             int rs = preparedStatement.executeUpdate();
             System.out.println(rs);
             return rs;
@@ -151,4 +151,17 @@ public class EmployeeDAO {
         }
         return 0;
     }
+    public boolean isLoginUser(model.Employee user) throws SQLException {
+
+                Connection connection = JDBCConnection.getJDBCConnection();
+
+                String sql = "SELECT * FROM employees WHERE employee_Id = ? AND password_ = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, user.getEmployee_Id());
+                preparedStatement.setString(2, user.getPassword());
+
+                 ResultSet rs = preparedStatement.executeQuery();
+
+                return rs.next();     
+        }
 }

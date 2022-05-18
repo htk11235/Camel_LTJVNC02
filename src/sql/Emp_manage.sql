@@ -49,14 +49,14 @@ create table timekeeping(
 go
 GO
 delete from positions
-DBCC CHECKIDENT ('positions', RESEED, 0)
+DBCC CHECKIDENT ('positions', RESEED, 1)
 insert into positions values
 	('Staff'),
 	('Manager'),
 	('President')
 go
 delete from departments
-DBCC CHECKIDENT ('departments', RESEED, 0)
+DBCC CHECKIDENT ('departments', RESEED, 1)
 insert into departments values
 	('Font-end'),
 	('Back-end'),
@@ -64,7 +64,7 @@ insert into departments values
 	('Design')
 go
 delete from employees
-DBCC CHECKIDENT ('employees', RESEED, 0)
+DBCC CHECKIDENT ('employees', RESEED, 1)
 insert into employees values
 	('Dam Phu Quoc','1','1','M','12/10/2002','damphuquoc@gmail.com','0777456902','1'),
 	('Le Anh Quoc','2','1','M','12/10/2002','pearuk@gmail.com','0901960923','1'),
@@ -72,16 +72,15 @@ insert into employees values
 go
 
 delete from timekeeping
-DBCC CHECKIDENT ('timekeeping', RESEED, 0)
+DBCC CHECKIDENT ('timekeeping', RESEED, 1)
 insert into timekeeping values
 	('1','9/5/2022','Yes'),
 	('1','10/5/2022','No')
 go
 delete from salaries
-DBCC CHECKIDENT ('salaries', RESEED, 0)
+DBCC CHECKIDENT ('salaries', RESEED, 1)
 insert into salaries values
 	('1',10,'5','2022')
 
 
-
-select * from positions order by position_Id asc
+SELECT employee_Name FROM employees WHERE employee_Id = 10 AND password_ = 1

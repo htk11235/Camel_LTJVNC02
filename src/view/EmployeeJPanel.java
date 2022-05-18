@@ -78,12 +78,12 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
        headerRenderer.setBackground(new Color(102,102,102));
        headerRenderer.setForeground(Color.white);
+       headerRenderer.setFont(new Font("Tohoma", Font.BOLD, 18));
        for (int i = 0; i < jTable_16.getModel().getColumnCount(); i++) {
                jTable_16.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
        }
        //design column 
        jTable_16.setGridColor(new Color (51,51,51));
-        jTable_16.getTableHeader().setFont(new Font("Tohoma", Font.BOLD, 18));
         jTable_16.getTableHeader().setPreferredSize(new Dimension(100, 50));
         jTable_16.setRowHeight(30);
         jTable_16.validate();
@@ -145,7 +145,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable_16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTable_16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -269,6 +269,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private void jButton_Add_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_16ActionPerformed
 
         new Employee_Add().setVisible(true);
+        
     }//GEN-LAST:event_jButton_Add_16ActionPerformed
 
     private void jButton_Edit_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Edit_16ActionPerformed

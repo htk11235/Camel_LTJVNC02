@@ -36,6 +36,7 @@ public class Employee_Add extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Employee_Add.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.setLocationRelativeTo(null);
     }
 public void setItem(List<Department> departments,List<Postion> postions) {
      for (Department department : departments) {
@@ -73,7 +74,7 @@ public void setItem(List<Department> departments,List<Postion> postions) {
         jLabel8 = new javax.swing.JLabel();
         name_TextFiled_Tel_16 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

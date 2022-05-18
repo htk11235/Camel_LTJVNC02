@@ -20,6 +20,7 @@ public class Employee {
     private Date birthday;
     private String email;
     private String tel;
+    private String password;
 
     public int getEmployee_Id() {
         return employee_Id;
@@ -82,5 +83,10 @@ public class Employee {
     public void setTel(String tel) {
         this.tel = tel;
     }
-
+    public String getPassword(){
+        return password;
+    }
+    public void setPass(String password){
+        this.password = password;
+    }
 }
