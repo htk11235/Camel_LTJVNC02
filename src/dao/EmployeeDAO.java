@@ -88,16 +88,17 @@ public class EmployeeDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO employees(employee_Name,department_Id,postion_Id,sex,birthday,email,tel) VALUES(?,?,?,?,?,?,?)";
-
+        String sql = "INSERT INTO employees VALUES(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, employee.getEmployee_Name());
             preparedStatement.setInt(2, employee.getDepartment_Id());
+            preparedStatement.setInt(3, employee.getPosition_Id());
             preparedStatement.setString(4, employee.getSex());
             preparedStatement.setDate(5, (Date) employee.getBirthday());
             preparedStatement.setString(6, employee.getEmail());
             preparedStatement.setString(7, employee.getTel());
+             preparedStatement.setString(8, "1");
             int rs = preparedStatement.executeUpdate();
             System.out.println(rs);
             return rs;
@@ -150,4 +151,17 @@ public class EmployeeDAO {
         }
         return 0;
     }
+    public boolean isLoginUser(model.Employee user) throws SQLException {
+
+                Connection connection = JDBCConnection.getJDBCConnection();
+
+                String sql = "SELECT * FROM employees WHERE employee_Id = ? AND password_ = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, user.getEmployee_Id());
+                preparedStatement.setString(2, user.getPassword());
+
+                 ResultSet rs = preparedStatement.executeQuery();
+
+                return rs.next();     
+        }
 }

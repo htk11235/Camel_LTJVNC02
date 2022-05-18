@@ -18,20 +18,14 @@ create table employees (
 	department_Id int foreign key references departments(department_Id)
 		on delete cascade
 		on update cascade,
+	position_Id int foreign key references positions(position_Id)
+	on delete cascade
+		on update cascade,
 	sex nvarchar(1),
 	birthday datetime,
 	email nvarchar(50) not null unique,
 	tel nvarchar(12),
 	password_ nvarchar(50)
-)
-create table employees_positions (
-	employee_Id int foreign key references employees(employee_Id)
-		on delete cascade
-		on update cascade,
-	position_Id int foreign key references positions(position_Id)
-		on delete cascade
-		on update cascade,
-	primary key(employee_Id,position_Id)
 )
 go
 create table salaries(
@@ -53,31 +47,40 @@ create table timekeeping(
 	status_ nvarchar(3),
 )
 go
-
+GO
+delete from positions
+DBCC CHECKIDENT ('positions', RESEED, 1)
 insert into positions values
-	('Nhân Viên'),
-	('Quản Lý'),
-	('Giám Đốc')
+	('Staff'),
+	('Manager'),
+	('President')
 go
+delete from departments
+DBCC CHECKIDENT ('departments', RESEED, 1)
 insert into departments values
-	('Phòng Kế Toán'),
-	('Phòng Kinh Doanh'),
-	('Phong Tài Chính và Dân Sự')
+	('Font-end'),
+	('Back-end'),
+	('Marketing'),
+	('Design')
 go
+delete from employees
+DBCC CHECKIDENT ('employees', RESEED, 1)
 insert into employees values
-	('Đàm Phú Quốc','1','M','12/10/2002','damphuquoc@gmail.com','0777456902','1')
-insert into employees_positions values 
-	('1','1')
+	('Dam Phu Quoc','1','1','M','12/10/2002','damphuquoc@gmail.com','0777456902','1'),
+	('Le Anh Quoc','2','1','M','12/10/2002','pearuk@gmail.com','0901960923','1'),
+	('Huynh Thi Khoa','2','1','F','12/10/2002','httk@gmail.com','0376806330','1')
+go
+
+delete from timekeeping
+DBCC CHECKIDENT ('timekeeping', RESEED, 1)
 insert into timekeeping values
 	('1','9/5/2022','Yes'),
 	('1','10/5/2022','No')
 go
+delete from salaries
+DBCC CHECKIDENT ('salaries', RESEED, 1)
 insert into salaries values
 	('1',10,'5','2022')
 
 
-select employee_Name,position_Name
-from positions p,employees e,employees_positions ep
-where ep.employee_Id = e.employee_Id and p.position_Id = ep.position_Id
-
-select * from positions order by position_Id asc
+SELECT employee_Name FROM employees WHERE employee_Id = 10 AND password_ = 1
