@@ -84,6 +84,34 @@ public class EmployeeDAO {
         return null;
     }
 
+        public Employee getEmployeeByEmail(String email) throws SQLException {
+
+        Connection connection = JDBCConnection.getJDBCConnection();
+
+        String sql = "SELECT * FROM  employees WHERE email = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Employee employee = new Employee();
+                employee.setEmployee_Id(rs.getInt("employee_Id"));
+                employee.setEmployee_Name(rs.getString("employee_Name"));
+                employee.setDepartment_Id(rs.getInt("department_Id"));
+                employee.setSex(rs.getString("sex"));
+                employee.setBirthday(rs.getDate("birthday"));
+                employee.setEmail(rs.getString("email"));
+                employee.setTel(rs.getString("tel"));
+                return employee;
+            }
+
+        } catch (SQLException e) {
+        }
+        return null;
+    }
+    
     public int addEmployee(Employee employee) throws SQLException {
 
         Connection connection = JDBCConnection.getJDBCConnection();
@@ -155,9 +183,9 @@ public class EmployeeDAO {
 
                 Connection connection = JDBCConnection.getJDBCConnection();
 
-                String sql = "SELECT * FROM employees WHERE employee_Id = ? AND password_ = ?";
+                String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setInt(1, user.getEmployee_Id());
+                preparedStatement.setString(1, user.getEmail());
                 preparedStatement.setString(2, user.getPassword());
 
                  ResultSet rs = preparedStatement.executeQuery();

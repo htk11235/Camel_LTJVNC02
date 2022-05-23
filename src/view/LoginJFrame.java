@@ -33,7 +33,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         passwordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
-        usernameTextField = new javax.swing.JTextField();
+        email_TextField_16 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -82,27 +82,27 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        usernameTextField.setBackground(new java.awt.Color(38, 51, 57));
-        usernameTextField.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField.setText("username");
-        usernameTextField.setToolTipText("");
-        usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+        email_TextField_16.setBackground(new java.awt.Color(38, 51, 57));
+        email_TextField_16.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        email_TextField_16.setForeground(new java.awt.Color(255, 255, 255));
+        email_TextField_16.setText("username");
+        email_TextField_16.setToolTipText("");
+        email_TextField_16.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                usernameTextFieldFocusGained(evt);
+                email_TextField_16FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                usernameTextFieldFocusLost(evt);
+                email_TextField_16FocusLost(evt);
             }
         });
-        usernameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+        email_TextField_16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextFieldMouseClicked(evt);
+                email_TextField_16MouseClicked(evt);
             }
         });
-        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
+        email_TextField_16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextFieldActionPerformed(evt);
+                email_TextField_16ActionPerformed(evt);
             }
         });
 
@@ -156,7 +156,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -165,7 +165,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passwordField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(usernameTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(email_TextField_16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(67, 67, 67))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -180,7 +180,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(43, 43, 43)
-                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(email_TextField_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -192,7 +192,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,13 +212,13 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
                 // TODO add your handling code here:
-                user.setEmployee_Id(Integer.parseInt(usernameTextField.getText()));
+                user.setEmail(email_TextField_16.getText());
                 user.setPass(String.valueOf(passwordField.getPassword()));
         try {
             if (userDao.isLoginUser(user)) {
-
+                user = userDao.getEmployeeByEmail(user.getEmail());
                 MainFrame m = new MainFrame();
-                m.ChangeName("hi  ," + userDao.getEmployeeById(user.getEmployee_Id()).getEmployee_Name());
+                m.ChangeName("hi  ," + user.getEmployee_Name());
                 m.setVisible(true);
                 this.dispose();
             } else {
@@ -230,31 +230,31 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         }//GEN-LAST:event_loginButtonActionPerformed
 
-        private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
+        private void email_TextField_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_TextField_16ActionPerformed
                 // TODO add your handling code here:
-        }//GEN-LAST:event_usernameTextFieldActionPerformed
+        }//GEN-LAST:event_email_TextField_16ActionPerformed
 
         private void passwordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseClicked
                 // TODO add your handling code here:
         }//GEN-LAST:event_passwordFieldMouseClicked
 
-        private void usernameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextFieldMouseClicked
+        private void email_TextField_16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_email_TextField_16MouseClicked
                 // TODO add your handling code here:
-        }//GEN-LAST:event_usernameTextFieldMouseClicked
+        }//GEN-LAST:event_email_TextField_16MouseClicked
 
-        private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
+        private void email_TextField_16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_email_TextField_16FocusGained
                 // TODO add your handling code here:
-                if (usernameTextField.getText().equals("username")) {
-                        usernameTextField.setText("");
+                if (email_TextField_16.getText().equals("username")) {
+                        email_TextField_16.setText("");
                 }
-        }//GEN-LAST:event_usernameTextFieldFocusGained
+        }//GEN-LAST:event_email_TextField_16FocusGained
 
-        private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
+        private void email_TextField_16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_email_TextField_16FocusLost
                 // TODO add your handling code here:
-                if (usernameTextField.getText().equals("")) {
-                        usernameTextField.setText("username");
+                if (email_TextField_16.getText().equals("")) {
+                        email_TextField_16.setText("username");
                 }
-        }//GEN-LAST:event_usernameTextFieldFocusLost
+        }//GEN-LAST:event_email_TextField_16FocusLost
 
         private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
                 // TODO add your handling code here:
@@ -321,6 +321,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField email_TextField_16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -329,6 +330,5 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }
