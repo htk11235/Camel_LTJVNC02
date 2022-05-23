@@ -27,7 +27,9 @@ public class EmployeeService {
     public Employee getEmployeeById(int id) throws SQLException {
         return employeeDAO.getEmployeeById(id);
     }
-
+public Employee getEmployeeByEmail(String email) throws SQLException {
+     return employeeDAO.getEmployeeByEmail(email);
+}
     public int addEmployee(Employee employee) throws SQLException {
         return employeeDAO.addEmployee(employee);
     }
