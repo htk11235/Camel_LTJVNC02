@@ -63,6 +63,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         defaultTableModel.addColumn("department");
         defaultTableModel.addColumn("position");
         defaultTableModel.addColumn("sex");
+        defaultTableModel.addColumn("birthday");
         defaultTableModel.addColumn("email");
         defaultTableModel.addColumn("tel");
         try {
@@ -96,7 +97,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private void setTableData(List<Employee> Employees) {
         for (Employee Employee : Employees) {
             try {
-                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),postionService.getPostionById(Employee.getPosition_Id()).getPostion_Name(),Employee.getSex(),Employee.getEmail(),Employee.getTel()});
+                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),postionService.getPostionById(Employee.getPosition_Id()).getPostion_Name(),Employee.getSex(),Employee.getBirthday(),Employee.getEmail(),Employee.getTel()});
             } catch (SQLException ex) {
                 Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }

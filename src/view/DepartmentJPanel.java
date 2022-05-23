@@ -120,6 +120,7 @@ public class DepartmentJPanel extends javax.swing.JPanel {
         jPanel1_table.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1_table.setForeground(new java.awt.Color(255, 255, 255));
 
+        jTextField_search_12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextField_search_12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField_search_12KeyPressed(evt);
@@ -179,7 +180,7 @@ public class DepartmentJPanel extends javax.swing.JPanel {
         });
 
         jButton_Refresh_12.setText("Refresh");
-        jButton_Refresh_12.setBorder(null);
+        jButton_Refresh_12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton_Refresh_12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_Refresh_12ActionPerformed(evt);

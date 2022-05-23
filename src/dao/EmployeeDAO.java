@@ -37,6 +37,7 @@ public class EmployeeDAO {
                 employee.setEmployee_Id(rs.getInt("employee_Id"));
                 employee.setEmployee_Name(rs.getString("employee_Name"));
                 employee.setDepartment_Id(rs.getInt("department_Id"));
+                employee.setPosition_Id(rs.getInt("position_Id"));
                 employee.setSex(rs.getString("sex"));
                 employee.setBirthday(rs.getDate("birthday"));
                 employee.setEmail(rs.getString("email"));
@@ -183,7 +184,7 @@ public class EmployeeDAO {
 
                 Connection connection = JDBCConnection.getJDBCConnection();
 
-                String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
+                String sql = "SELECT * FROM employees WHERE email = ? AND password_ = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, user.getEmail());
                 preparedStatement.setString(2, user.getPassword());

@@ -350,8 +350,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        user.setForeground(new java.awt.Color(51, 51, 255));
+        user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        user.setForeground(new java.awt.Color(255, 102, 102));
         user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bi_person-circle.png"))); // NOI18N
         user.setText("hi, camel");
 
