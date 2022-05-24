@@ -74,7 +74,6 @@ public class PostionDAO {
  public Postion getPostionByName(String name) throws SQLException {
 
         Connection connection = JDBCConnection.getJDBCConnection();
-
         String sql = "SELECT * FROM  positions WHERE position_Name = ?";
 
         try {
@@ -83,9 +82,8 @@ public class PostionDAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Postion postion = new Postion();
                 preparedStatement.setString(1, name);
-
+                Postion postion = new Postion();
                 postion.setPostion_Id(rs.getInt("position_Id"));
                 postion.setPostion_Name(rs.getString("position_Name"));
              

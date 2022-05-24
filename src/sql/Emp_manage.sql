@@ -68,7 +68,8 @@ DBCC CHECKIDENT ('employees', RESEED, 1)
 insert into employees values
 	('Dam Phu Quoc','1','1','M','12/10/2002','damphuquoc@gmail.com','0777456902','1'),
 	('Le Anh Quoc','2','1','M','12/10/2002','pearuk@gmail.com','0901960923','1'),
-	('Huynh Thi Khoa','2','1','F','12/10/2002','httk@gmail.com','0376806330','1')
+	('Huynh Thi Khoa','2','1','F','12/10/2002','httk@gmail.com','0376806330','1'),
+	('Sub acc','1','3','F','12/10/2002','1','000','2')
 go
 
 delete from timekeeping
@@ -83,4 +84,4 @@ insert into salaries values
 	('1',10,'5','2022')
 
 
-SELECT employee_Name FROM employees WHERE employee_Id = 10 AND password_ = 1
+	SELECT * FROM  positions WHERE position_Id = 1
