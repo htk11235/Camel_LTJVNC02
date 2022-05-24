@@ -105,7 +105,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         jPanel_viewLayout.setVerticalGroup(
             jPanel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1_Navbar.setBackground(new java.awt.Color(255, 255, 255));
@@ -350,8 +350,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        user.setForeground(new java.awt.Color(51, 51, 255));
+        user.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        user.setForeground(new java.awt.Color(255, 102, 102));
         user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bi_person-circle.png"))); // NOI18N
         user.setText("hi, camel");
 
@@ -417,8 +417,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel_BackgroundLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel_view, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel_view, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

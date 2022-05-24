@@ -63,6 +63,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         defaultTableModel.addColumn("department");
         defaultTableModel.addColumn("position");
         defaultTableModel.addColumn("sex");
+        defaultTableModel.addColumn("birthday");
         defaultTableModel.addColumn("email");
         defaultTableModel.addColumn("tel");
         try {
@@ -96,7 +97,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private void setTableData(List<Employee> Employees) {
         for (Employee Employee : Employees) {
             try {
-                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),postionService.getPostionById(Employee.getPosition_Id()).getPostion_Name(),Employee.getSex(),Employee.getEmail(),Employee.getTel()});
+                defaultTableModel.addRow(new Object[]{Employee.getEmployee_Id(), Employee.getEmployee_Name(),departmentService.getDepartmentById(Employee.getDepartment_Id()).getDepartment_Name(),postionService.getPostionById(Employee.getPosition_Id()).getPostion_Name(),Employee.getSex(),Employee.getBirthday(),Employee.getEmail(),Employee.getTel()});
             } catch (SQLException ex) {
                 Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -134,6 +135,17 @@ public class EmployeeJPanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(899, 598));
 
+        jTextField_search_16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_search_16.setText("Search");
+        jTextField_search_16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextField_search_16.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField_search_16FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_search_16FocusLost(evt);
+            }
+        });
         jTextField_search_16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_search_16ActionPerformed(evt);
@@ -160,6 +172,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         jTable_16.setShowGrid(true);
         jScrollPane1.setViewportView(jTable_16);
 
+        jButton_Refresh_16.setBackground(new java.awt.Color(255, 255, 255));
         jButton_Refresh_16.setText("Refresh");
         jButton_Refresh_16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +250,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Refresh_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,6 +304,16 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_jButton_Del_16ActionPerformed
+
+    private void jTextField_search_16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_search_16FocusGained
+               if(jTextField_search_16.getText().equals("Search"))
+            jTextField_search_16.setText("");
+    }//GEN-LAST:event_jTextField_search_16FocusGained
+
+    private void jTextField_search_16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_search_16FocusLost
+                if(jTextField_search_16.getText().equals(""))
+            jTextField_search_16.setText("Search");
+    }//GEN-LAST:event_jTextField_search_16FocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

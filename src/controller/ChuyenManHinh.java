@@ -7,7 +7,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import view.DepartmentJPanel;
 import view.EmployeeJPanel;
 import view.PostionJPanel;
 import view.SalaryJPanel;
@@ -16,6 +15,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.border.MatteBorder;
+import view.BarChart;
+import view.DepartmentJPanel;
+import view.DepartmentListJPanel;
 /**
  *
  * @author Jonny Dam
@@ -40,6 +42,18 @@ import javax.swing.border.MatteBorder;
                jpbView.add(node);
                jpbView.validate();
                jpbView.repaint();
+            }
+              public void setDashboardOfDepartment(JPanel jpnItem, JLabel jlbItem) throws SQLException {
+               kindSelected = "DepartmentList";
+
+               jlbItem.setForeground(new Color(255, 154, 99));
+               JPanel node = new DepartmentListJPanel();
+               
+               jpbView.removeAll();
+               jpbView.setLayout(new BorderLayout());
+               jpbView.add(node);
+//               jpbView.validate();
+//               jpbView.repaint();
             }
             public void setEvent(List<DanhMucBean> listDanhMuc){
                 this.listDanhMuc = listDanhMuc;
@@ -66,13 +80,15 @@ import javax.swing.border.MatteBorder;
                       switch (kind) {
                           case "Department":
                           {
-                              try {
-                                  panel = new DepartmentJPanel();
-                              } catch (SQLException ex) {
-                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
-                              }
+                          try {
+                              panel = new DepartmentJPanel();
+                          } catch (SQLException ex) {
+                              Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                          }
                           }
                               break;
+
+
                           case "Employee":
                               panel = new EmployeeJPanel();
                               break;
@@ -92,6 +108,25 @@ import javax.swing.border.MatteBorder;
                           case "Salary":
                               panel = new SalaryJPanel();
                               break;
+                              
+                              
+                          case "DepartmentList":
+                          {
+                              try {
+                                  panel = new DepartmentListJPanel();
+                              } catch (SQLException ex) {
+                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                              }
+                          }
+                          break;
+                          
+                          case "DepartmentChart":
+                          {
+                              panel = new BarChart();
+                          }
+                              break;
+
+
                           // more
                           default:
                               break;
