@@ -14,30 +14,30 @@ import java.util.List;
  * @author htk11
  */
 public class PostionService {
-     private PostionDAO posDAO;
+     private PostionDAO posDAO_16;
 
     public PostionService() {
-        posDAO = new PostionDAO();
+        posDAO_16 = new PostionDAO();
     }
   public List<Postion> getAllPostion() throws SQLException {
-        return posDAO.getAllPostion();
+        return posDAO_16.getAllPostion();
     }
     public Postion getPostionById(int id) throws SQLException {
-        return posDAO.getPostionById(id);
+        return posDAO_16.getPostionById(id);
     }
 
     public int addPostion(Postion pos) throws SQLException {
-        return posDAO.addPostion(pos);
+        return posDAO_16.addPostion(pos);
     }
 
     public int updatePostion(Postion pos) throws SQLException {
-        return posDAO.updatePostion(pos);
+        return posDAO_16.updatePostion(pos);
     }
 
     public int deletePostion(int id) throws SQLException {
-        return posDAO.deletePostion(id);
+        return posDAO_16.deletePostion(id);
     }
      public Postion getPostionByName(String name) throws SQLException {
-           return posDAO.getPostionByName(name);
+           return posDAO_16.getPostionByName(name);
      }
 }

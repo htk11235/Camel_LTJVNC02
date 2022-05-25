@@ -14,32 +14,32 @@ import model.Department;
  * @author htk11
  */
 public class DepartmentService {
-     private DepartmentDAO depDAO;
+     private DepartmentDAO depDAO_16;
 
     public DepartmentService() {
-        depDAO = new DepartmentDAO();
+        depDAO_16 = new DepartmentDAO();
     }
 
     public List<Department> getAllDepartment() throws SQLException {
-        return depDAO.getAllDepartment();
+        return depDAO_16.getAllDepartment();
     }
 
     public Department getDepartmentById(int id) throws SQLException {
-        return depDAO.getDepartmentById(id);
+        return depDAO_16.getDepartmentById(id);
     }
 
     public int addDepartment(Department dep) throws SQLException {
-        return depDAO.addDepartment(dep);
+        return depDAO_16.addDepartment(dep);
     }
 
     public int updateDepartment(Department dep) throws SQLException {
-        return depDAO.updateDepartment(dep);
+        return depDAO_16.updateDepartment(dep);
     }
 
     public int deleteDepartment(int id) throws SQLException {
-        return depDAO.deleteDepartment(id);
+        return depDAO_16.deleteDepartment(id);
     }
       public Department getDepartmentByName(String  name) throws SQLException {
-          return depDAO.getDepartmentByName(name);
+          return depDAO_16.getDepartmentByName(name);
       }
 }
