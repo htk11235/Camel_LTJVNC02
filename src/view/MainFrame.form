@@ -26,20 +26,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel_Background" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel_Background_61" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel_Background" max="32767" attributes="0"/>
+              <Component id="jPanel_Background_61" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel_Background">
+    <Container class="javax.swing.JPanel" name="jPanel_Background_61">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -53,10 +53,10 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="jPanel1_Navbar" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1_Navbar_61" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel_view" pref="831" max="32767" attributes="0"/>
+                      <Component id="jPanel_view_61" pref="831" max="32767" attributes="0"/>
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -65,18 +65,18 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel1_Navbar" max="32767" attributes="0"/>
+              <Component id="jPanel1_Navbar_61" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Component id="jPanel1" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanel_view" pref="634" max="32767" attributes="0"/>
+                  <Component id="jPanel_view_61" pref="634" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel_view">
+        <Container class="javax.swing.JPanel" name="jPanel_view_61">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="ec" red="eb" type="rgb"/>
@@ -109,7 +109,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel1_Navbar">
+        <Container class="javax.swing.JPanel" name="jPanel1_Navbar_61">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -131,47 +131,47 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jLabel6_61" min="-2" pref="130" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jPanel2_Departement" min="-2" pref="217" max="-2" attributes="0"/>
-                                  <Component id="jPanel1_Employee" min="-2" pref="217" max="-2" attributes="0"/>
-                                  <Component id="jPanel1_Timekeeping" min="-2" pref="217" max="-2" attributes="0"/>
-                                  <Component id="jPanel1_Postion" min="-2" pref="217" max="-2" attributes="0"/>
-                                  <Component id="jPanel2_Salary" alignment="1" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <Component id="jPanel2_Departement_61" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <Component id="jPanel1_Employee_61" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <Component id="jPanel1_Timekeeping_61" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <Component id="jPanel1_Postion_61" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <Component id="jPanel2_Salary_61" alignment="1" min="-2" pref="217" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1_Logo" alignment="0" pref="255" max="32767" attributes="0"/>
+                  <Component id="jPanel1_Logo_61" alignment="0" pref="255" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel1_Logo" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1_Logo_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel2_Departement" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel2_Departement_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jPanel1_Employee" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1_Employee_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jPanel1_Timekeeping" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1_Timekeeping_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jPanel1_Postion" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1_Postion_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jPanel2_Salary" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel2_Salary_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="242" max="32767" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6_61" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel2_Departement">
+            <Container class="javax.swing.JPanel" name="jPanel2_Departement_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -191,9 +191,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jLabel3_61" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel_Department" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="jLabel_Department_61" min="-2" pref="134" max="-2" attributes="0"/>
                           <EmptySpace pref="35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -203,8 +203,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel_Department" alignment="0" pref="60" max="32767" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" pref="60" max="32767" attributes="0"/>
+                              <Component id="jLabel_Department_61" alignment="0" pref="60" max="32767" attributes="0"/>
+                              <Component id="jLabel3_61" alignment="0" pref="60" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -212,7 +212,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel_Department">
+                <Component class="javax.swing.JLabel" name="jLabel_Department_61">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="77" green="77" red="77" type="rgb"/>
@@ -227,7 +227,7 @@
                     <Property name="text" type="java.lang.String" value="Department"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="jLabel3_61">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/img/cil_room-1.png"/>
@@ -236,7 +236,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel1_Employee">
+            <Container class="javax.swing.JPanel" name="jPanel1_Employee_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -254,22 +254,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="jLabel1_61" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1_Employee" min="-2" pref="132" max="-2" attributes="0"/>
+                          <Component id="jLabel1_Employee_61" min="-2" pref="132" max="-2" attributes="0"/>
                           <EmptySpace pref="35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" alignment="0" pref="60" max="32767" attributes="0"/>
-                      <Component id="jLabel1_Employee" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel1_61" alignment="0" pref="60" max="32767" attributes="0"/>
+                      <Component id="jLabel1_Employee_61" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1_Employee">
+                <Component class="javax.swing.JLabel" name="jLabel1_Employee_61">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -281,7 +281,7 @@
                     <Property name="text" type="java.lang.String" value="Employee"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="jLabel1_61">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/img/iconoir_group (1).png"/>
@@ -290,7 +290,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel1_Timekeeping">
+            <Container class="javax.swing.JPanel" name="jPanel1_Timekeeping_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -308,22 +308,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jLabel2_61" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1_Timekeeping" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="jLabel1_Timekeeping_61" min="-2" pref="134" max="-2" attributes="0"/>
                           <EmptySpace pref="35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" alignment="1" pref="60" max="32767" attributes="0"/>
-                      <Component id="jLabel1_Timekeeping" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel2_61" alignment="1" pref="60" max="32767" attributes="0"/>
+                      <Component id="jLabel1_Timekeeping_61" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1_Timekeeping">
+                <Component class="javax.swing.JLabel" name="jLabel1_Timekeeping_61">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -335,7 +335,7 @@
                     <Property name="text" type="java.lang.String" value="Timekeeping"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="jLabel2_61">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/img/la_business-time.png"/>
@@ -344,7 +344,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel1_Postion">
+            <Container class="javax.swing.JPanel" name="jPanel1_Postion_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -359,22 +359,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jLabel4_61" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1_Postion" pref="163" max="32767" attributes="0"/>
+                          <Component id="jLabel1_Postion_61" pref="163" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" alignment="1" pref="60" max="32767" attributes="0"/>
-                      <Component id="jLabel1_Postion" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel4_61" alignment="1" pref="60" max="32767" attributes="0"/>
+                      <Component id="jLabel1_Postion_61" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1_Postion">
+                <Component class="javax.swing.JLabel" name="jLabel1_Postion_61">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -386,7 +386,7 @@
                     <Property name="text" type="java.lang.String" value="Postion"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="jLabel4_61">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/img/material-symbols_business-center-outline-sharp-1.png"/>
@@ -395,7 +395,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel2_Salary">
+            <Container class="javax.swing.JPanel" name="jPanel2_Salary_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -410,22 +410,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jLabel5_61" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel_Salary" pref="163" max="32767" attributes="0"/>
+                          <Component id="jLabel_Salary_61" pref="163" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel5" alignment="0" pref="60" max="32767" attributes="0"/>
-                      <Component id="jLabel_Salary" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel5_61" alignment="0" pref="60" max="32767" attributes="0"/>
+                      <Component id="jLabel_Salary_61" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel_Salary">
+                <Component class="javax.swing.JLabel" name="jLabel_Salary_61">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -437,7 +437,7 @@
                     <Property name="text" type="java.lang.String" value="Salary"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="jLabel5_61">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/img/carbon_piggy-bank.png"/>
@@ -446,7 +446,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="jLabel6_61">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -454,7 +454,7 @@
                 <Property name="text" type="java.lang.String" value="Copyright &#xa9; by Camel"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel1_Logo">
+            <Container class="javax.swing.JPanel" name="jPanel1_Logo_61">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>

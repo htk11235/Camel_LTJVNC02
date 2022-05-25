@@ -22,10 +22,10 @@ import javax.swing.table.TableRowSorter;
 
 public class PostionJPanel extends javax.swing.JPanel {
 
-    private PostionService postionService;
+    private PostionService postionService16;
     public DefaultTableModel getModelTable() {
-        DefaultTableModel model = (DefaultTableModel) jTable_16.getModel();
-        return model;
+        DefaultTableModel model16 = (DefaultTableModel) jTable_16.getModel();
+        return model16;
     }
 
     public void searchTable(String value) {
@@ -34,24 +34,24 @@ public class PostionJPanel extends javax.swing.JPanel {
         trs.setRowFilter(RowFilter.regexFilter(value));
     }
 
-    DefaultTableModel defaultTableModel;
+    DefaultTableModel defaultTableModel_16;
     public PostionJPanel() throws SQLException {
         initComponents();
-         postionService = new PostionService();
+         postionService16 = new PostionService();
 
-        defaultTableModel = new DefaultTableModel() {
+        defaultTableModel_16 = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        jTable_16.setModel(defaultTableModel);
-        defaultTableModel.addColumn("id");
-        defaultTableModel.addColumn("name");
-        setTableData(postionService.getAllPostion());
+        jTable_16.setModel(defaultTableModel_16);
+        defaultTableModel_16.addColumn("id");
+        defaultTableModel_16.addColumn("name");
+        setTableData(postionService16.getAllPostion());
         
         
-        jTable_16.setModel(defaultTableModel);
+        jTable_16.setModel(defaultTableModel_16);
         jTable_16.getTableHeader().setOpaque(false);
         
 //        header design
@@ -75,12 +75,12 @@ public class PostionJPanel extends javax.swing.JPanel {
 
     private void setTableData(List<Postion> postion) {
         for (Postion Pos : postion) {
-            defaultTableModel.addRow(new Object[]{Pos.getPostion_Id(), Pos.getPostion_Name()});
+            defaultTableModel_16.addRow(new Object[]{Pos.getPostion_Id(), Pos.getPostion_Name()});
         }
     }
 
     private void refreshTableData(List<Postion> postion) {
-        defaultTableModel.setRowCount(0);
+        defaultTableModel_16.setRowCount(0);
         setTableData(postion);
     }
 
@@ -238,7 +238,7 @@ public class PostionJPanel extends javax.swing.JPanel {
        
       
         try {
-            refreshTableData(postionService.getAllPostion());
+            refreshTableData(postionService16.getAllPostion());
         } catch (SQLException ex) {
             Logger.getLogger(PostionJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -262,8 +262,8 @@ public class PostionJPanel extends javax.swing.JPanel {
         int id = Integer.parseInt(tblModel.getValueAt(jTable_16.getSelectedRow(), 0).toString());
         
         try {
-            postionService.deletePostion(id);
-            refreshTableData(postionService.getAllPostion());
+            postionService16.deletePostion(id);
+            refreshTableData(postionService16.getAllPostion());
         } catch (SQLException ex) {
             Logger.getLogger(PostionJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }

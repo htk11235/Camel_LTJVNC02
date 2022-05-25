@@ -55,7 +55,7 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
          jTable_12.setModel(defaultTableModel16);
         jTable_12.getTableHeader().setOpaque(false);
         
-//        header design
+
             DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
        headerRenderer.setBackground(new Color(102,102,102));
        headerRenderer.setForeground(Color.white);

@@ -42,25 +42,25 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
        headerRenderer.setBackground(new Color(102,102,102));
        headerRenderer.setForeground(Color.white);
-       for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
-               jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+       for (int i = 0; i < jTable1_16.getModel().getColumnCount(); i++) {
+               jTable1_16.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
        }
        //design column 
-       jTable1.setGridColor(new Color (51,51,51));
-        jTable1.getTableHeader().setFont(new Font("Tohoma", Font.BOLD, 14));
-        jTable1.getTableHeader().setPreferredSize(new Dimension(100, 50));
-        jTable1.setRowHeight(30);
-        jTable1.validate();
-        jTable1.repaint();
-        jTable1.setOpaque(true);
-        jTable1.setFillsViewportHeight(true);
-        jTable1.setBackground( new Color(255,255,255));
+       jTable1_16.setGridColor(new Color (51,51,51));
+        jTable1_16.getTableHeader().setFont(new Font("Tohoma", Font.BOLD, 14));
+        jTable1_16.getTableHeader().setPreferredSize(new Dimension(100, 50));
+        jTable1_16.setRowHeight(30);
+        jTable1_16.validate();
+        jTable1_16.repaint();
+        jTable1_16.setOpaque(true);
+        jTable1_16.setFillsViewportHeight(true);
+        jTable1_16.setBackground( new Color(255,255,255));
         
         setTableData("25/5/2022");
     }
     
  private void setTableData(String day) throws SQLException, ParseException {
-     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+     DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
       SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         date =format.parse(day);
@@ -86,19 +86,19 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable1_16 = new javax.swing.JTable();
         jButton_Save_16 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButton3_16 = new javax.swing.JButton();
         jDateChooser_16 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jButton4_16 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(119, 119, 119));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
         jLabel1.setText("timekeeping");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -121,10 +121,10 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(jTable1_16);
+        if (jTable1_16.getColumnModel().getColumnCount() > 0) {
+            jTable1_16.getColumnModel().getColumn(0).setResizable(false);
+            jTable1_16.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jButton_Save_16.setBackground(new java.awt.Color(0, 204, 102));
@@ -140,23 +140,23 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(237, 74, 74));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Un Tick");
-        jButton3.setMaximumSize(new java.awt.Dimension(61, 23));
-        jButton3.setMinimumSize(new java.awt.Dimension(61, 23));
-        jButton3.setPreferredSize(new java.awt.Dimension(61, 23));
+        jButton3_16.setBackground(new java.awt.Color(237, 74, 74));
+        jButton3_16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3_16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3_16.setText("Un Tick");
+        jButton3_16.setMaximumSize(new java.awt.Dimension(61, 23));
+        jButton3_16.setMinimumSize(new java.awt.Dimension(61, 23));
+        jButton3_16.setPreferredSize(new java.awt.Dimension(61, 23));
 
         jLabel2.setText("Select Day");
 
-        jButton4.setBackground(new java.awt.Color(25, 114, 219));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Tíck All");
-        jButton4.setMaximumSize(new java.awt.Dimension(61, 23));
-        jButton4.setMinimumSize(new java.awt.Dimension(61, 23));
-        jButton4.setPreferredSize(new java.awt.Dimension(61, 23));
+        jButton4_16.setBackground(new java.awt.Color(25, 114, 219));
+        jButton4_16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton4_16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4_16.setText("Tíck All");
+        jButton4_16.setMaximumSize(new java.awt.Dimension(61, 23));
+        jButton4_16.setMinimumSize(new java.awt.Dimension(61, 23));
+        jButton4_16.setPreferredSize(new java.awt.Dimension(61, 23));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -183,9 +183,9 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -201,9 +201,9 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -214,13 +214,13 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton3_16;
+    private javax.swing.JButton jButton4_16;
     private javax.swing.JButton jButton_Save_16;
     private com.toedter.calendar.JDateChooser jDateChooser_16;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable1_16;
     // End of variables declaration//GEN-END:variables
 }

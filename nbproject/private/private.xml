@@ -5,26 +5,18 @@
         <group>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/EmployeeJPanel.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/dao/TimekeepingDAO.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/CRUD_View/Employee_Add.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/model/Department.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/LoginJFrame.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/dao/JDBCConnection.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/BarChart.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/TimekeepingJPanel.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/DepartmentJPanel.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/MainFrame.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/dao/DepartmentDAO.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/CRUD_View/Emp_Add.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/dao/PostionDAO.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/PostionJPanel.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/DepartmentListJPanel.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/SalaryJPanel.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/view/CRUD_View/Department_Add.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/service/TimekeepingService.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/dao/EmployeeDAO.java</file>
             <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/controller/ChuyenManHinh.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/model/Timekeeping.java</file>
-            <file>file:/E:/SPKT/HK2-2021-2022/T5_12_ChuBeDan/Camel_LTJVNC02/src/model/Postion.java</file>
         </group>
     </open-files>
 </project-private>
