@@ -14,31 +14,31 @@ import java.util.List;
  * @author htk11
  */
 public class EmployeeService {
-     private EmployeeDAO employeeDAO;
+     private EmployeeDAO employeeDAO_16;
 
     public EmployeeService() {
-        employeeDAO = new EmployeeDAO();
+        employeeDAO_16 = new EmployeeDAO();
     }
 
     public List<Employee> getAllEmployee() throws SQLException {
-        return employeeDAO.getAllEmployee();
+        return employeeDAO_16.getAllEmployee();
     }
 
     public Employee getEmployeeById(int id) throws SQLException {
-        return employeeDAO.getEmployeeById(id);
+        return employeeDAO_16.getEmployeeById(id);
     }
 public Employee getEmployeeByEmail(String email) throws SQLException {
-     return employeeDAO.getEmployeeByEmail(email);
+     return employeeDAO_16.getEmployeeByEmail(email);
 }
     public int addEmployee(Employee employee) throws SQLException {
-        return employeeDAO.addEmployee(employee);
+        return employeeDAO_16.addEmployee(employee);
     }
 
     public int updateEmployee(Employee employee) throws SQLException {
-        return employeeDAO.updateEmployee(employee);
+        return employeeDAO_16.updateEmployee(employee);
     }
 
     public int deleteEmployee(int id) throws SQLException {
-        return employeeDAO.deleteEmployee(id);
+        return employeeDAO_16.deleteEmployee(id);
     }
 }

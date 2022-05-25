@@ -13,18 +13,18 @@ import model.Timekeeping;
 
 
 public class TimekeepingService {
-    TimekeepingDAO td = new TimekeepingDAO();
+    TimekeepingDAO td_16 = new TimekeepingDAO();
       public List<Timekeeping> getAllTimekeeping() throws SQLException {
-        return td.getAllTimekeeping();
+        return td_16.getAllTimekeeping();
     }
      public int addTimekeeping(Timekeeping timekeeping) throws SQLException {
-         return td.addTimekeeping(timekeeping);
+         return td_16.addTimekeeping(timekeeping);
     }
 
     public int updateTimekeeping(Timekeeping timekeeping) throws SQLException {
-        return td.updateTimekeeping(timekeeping);
+        return td_16.updateTimekeeping(timekeeping);
     }
     public  List<Timekeeping> getTimekeepingByDay(Date day) throws SQLException {
-       return td.getTimekeepingByDay(day);
+       return td_16.getTimekeepingByDay(day);
     }
 }
