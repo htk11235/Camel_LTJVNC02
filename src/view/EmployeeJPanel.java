@@ -124,7 +124,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jTextField_search_16 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane1_16 = new javax.swing.JScrollPane();
         jTable_16 = new javax.swing.JTable();
         jButton_Refresh_16 = new javax.swing.JButton();
         jButton_Add_16 = new javax.swing.JButton();
@@ -169,7 +169,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         ));
         jTable_16.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable_16);
+        jScrollPane1_16.setViewportView(jTable_16);
 
         jButton_Refresh_16.setBackground(new java.awt.Color(255, 255, 255));
         jButton_Refresh_16.setText("Refresh");
@@ -225,7 +225,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel_DpScreen_16)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,7 +250,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Refresh_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -332,7 +332,7 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Edit_16;
     private javax.swing.JButton jButton_Refresh_16;
     private javax.swing.JLabel jLabel_DpScreen_16;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane1_16;
     private javax.swing.JTable jTable_16;
     private javax.swing.JTextField jTextField_search_16;
     // End of variables declaration//GEN-END:variables

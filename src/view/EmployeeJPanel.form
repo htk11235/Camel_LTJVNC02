@@ -28,7 +28,7 @@
                       <Component id="jLabel_DpScreen_16" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" alignment="0" pref="893" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1_16" alignment="0" pref="893" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jButton_Add_16" min="-2" pref="80" max="-2" attributes="0"/>
@@ -59,7 +59,7 @@
                   <Component id="jButton_Refresh_16" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="420" max="32767" attributes="0"/>
+              <Component id="jScrollPane1_16" pref="420" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton_Add_16" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField_search_16KeyReleased"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1_16">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>

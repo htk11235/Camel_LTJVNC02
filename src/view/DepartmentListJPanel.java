@@ -90,9 +90,9 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jTextField_search_12 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane1_12 = new javax.swing.JScrollPane();
         jTable_12 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        jButton2_12 = new javax.swing.JButton();
         jButton_Add_12 = new javax.swing.JButton();
         jButton_Del_12 = new javax.swing.JButton();
         jButton_Refresh_12 = new javax.swing.JButton();
@@ -123,8 +123,8 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
             }
         });
 
-        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1_12.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1_12.setForeground(new java.awt.Color(255, 255, 255));
 
         jTable_12.setBackground(new java.awt.Color(102, 102, 102));
         jTable_12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -142,15 +142,15 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
         ));
         jTable_12.setGridColor(new java.awt.Color(51, 51, 51));
         jTable_12.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable_12);
+        jScrollPane1_12.setViewportView(jTable_12);
 
-        jButton2.setBackground(new java.awt.Color(25, 114, 219));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("EDIT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton2_12.setBackground(new java.awt.Color(25, 114, 219));
+        jButton2_12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2_12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2_12.setText("EDIT");
+        jButton2_12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton2_12ActionPerformed(evt);
             }
         });
 
@@ -194,12 +194,12 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane1_12)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 412, Short.MAX_VALUE)
                                 .addComponent(jButton_Add_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton2_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton_Del_12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
@@ -218,11 +218,11 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
                     .addComponent(jTextField_search_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Refresh_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1_12, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Add_12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2_12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Del_12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(276, 276, 276))
         );
@@ -242,12 +242,12 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton_Refresh_12ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_12ActionPerformed
          DefaultTableModel tblModel = (DefaultTableModel) jTable_12.getModel();
         int id = Integer.parseInt(tblModel.getValueAt(jTable_12.getSelectedRow(), 0).toString());
         System.out.println(id);
         new Department_Edit(id).setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2_12ActionPerformed
     private void jButton_Del_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Del_12ActionPerformed
          DefaultTableModel tblModel = (DefaultTableModel) jTable_12.getModel();
         int id = Integer.parseInt(tblModel.getValueAt(jTable_12.getSelectedRow(), 0).toString());
@@ -278,11 +278,11 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton2_12;
     private javax.swing.JButton jButton_Add_12;
     private javax.swing.JButton jButton_Del_12;
     private javax.swing.JButton jButton_Refresh_12;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane1_12;
     private javax.swing.JTable jTable_12;
     private javax.swing.JTextField jTextField_search_12;
     // End of variables declaration//GEN-END:variables

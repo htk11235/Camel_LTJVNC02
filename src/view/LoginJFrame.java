@@ -19,7 +19,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         initComponents();
         user = new Employee();
         userDao = new EmployeeDAO();
-                   passwordField.setEchoChar((char)0); 
+                   passwordField1_61.setEchoChar((char)0); 
     }
 
         /**
@@ -32,7 +32,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1_61 = new javax.swing.JPanel();
-        passwordField = new javax.swing.JPasswordField();
+        passwordField1_61 = new javax.swing.JPasswordField();
         email_TextField_61 = new javax.swing.JTextField();
         jLabel2_61 = new javax.swing.JLabel();
         jLabel3_61 = new javax.swing.JLabel();
@@ -51,27 +51,27 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel1_61.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1_61.setPreferredSize(new java.awt.Dimension(865, 630));
 
-        passwordField.setBackground(new java.awt.Color(255, 255, 255));
-        passwordField.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
-        passwordField.setForeground(new java.awt.Color(0, 0, 0));
-        passwordField.setText("password");
-        passwordField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+        passwordField1_61.setBackground(new java.awt.Color(255, 255, 255));
+        passwordField1_61.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        passwordField1_61.setForeground(new java.awt.Color(0, 0, 0));
+        passwordField1_61.setText("password");
+        passwordField1_61.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        passwordField1_61.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusGained(evt);
+                passwordField1_61FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusLost(evt);
+                passwordField1_61FocusLost(evt);
             }
         });
-        passwordField.addMouseListener(new java.awt.event.MouseAdapter() {
+        passwordField1_61.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                passwordFieldMouseClicked(evt);
+                passwordField1_61MouseClicked(evt);
             }
         });
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
+        passwordField1_61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
+                passwordField1_61ActionPerformed(evt);
             }
         });
 
@@ -188,7 +188,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1_61Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1_61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(passwordField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passwordField1_61, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(email_TextField_61)
                             .addComponent(jPanel3_loginbutton_61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(90, 90, 90))
@@ -214,7 +214,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(email_TextField_61, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(passwordField1_61, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66)
                         .addComponent(jPanel3_loginbutton_61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(117, 117, 117))
@@ -240,18 +240,18 @@ public class LoginJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-        private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        private void passwordField1_61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1_61ActionPerformed
                 // TODO add your handling code here:
-                passwordField.setText("");
-        }//GEN-LAST:event_passwordFieldActionPerformed
+                passwordField1_61.setText("");
+        }//GEN-LAST:event_passwordField1_61ActionPerformed
 
         private void email_TextField_61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_TextField_61ActionPerformed
                 // TODO add your handling code here:
         }//GEN-LAST:event_email_TextField_61ActionPerformed
 
-        private void passwordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseClicked
+        private void passwordField1_61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordField1_61MouseClicked
                 // TODO add your handling code here:
-        }//GEN-LAST:event_passwordFieldMouseClicked
+        }//GEN-LAST:event_passwordField1_61MouseClicked
 
         private void email_TextField_61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_email_TextField_61MouseClicked
                 // TODO add your handling code here:
@@ -271,26 +271,26 @@ public class LoginJFrame extends javax.swing.JFrame {
                 }
         }//GEN-LAST:event_email_TextField_61FocusLost
 
-        private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+        private void passwordField1_61FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordField1_61FocusGained
                 // TODO add your handling code here:
-                if (passwordField.getText().equals("password")) {
-                     passwordField.setEchoChar('*');
-                        passwordField.setText("");
+                if (passwordField1_61.getText().equals("password")) {
+                     passwordField1_61.setEchoChar('*');
+                        passwordField1_61.setText("");
                 }
-        }//GEN-LAST:event_passwordFieldFocusGained
+        }//GEN-LAST:event_passwordField1_61FocusGained
 
-        private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+        private void passwordField1_61FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordField1_61FocusLost
                 // TODO add your handling code here:
-                if (passwordField.getText().equals("")) {
-                    passwordField.setEchoChar((char)0); 
-                    passwordField.setText("password");
+                if (passwordField1_61.getText().equals("")) {
+                    passwordField1_61.setEchoChar((char)0); 
+                    passwordField1_61.setText("password");
                 }
-        }//GEN-LAST:event_passwordFieldFocusLost
+        }//GEN-LAST:event_passwordField1_61FocusLost
 
     private void jPanel3_loginbutton_61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3_loginbutton_61MouseClicked
                       // TODO add your handling code here:
                 user.setEmail(email_TextField_61.getText());
-                user.setPass(String.valueOf(passwordField.getPassword()));
+                user.setPass(String.valueOf(passwordField1_61.getPassword()));
         try {
             if (userDao.isLoginUser(user)) {
                 user = userDao.getEmployeeByEmail(user.getEmail());
@@ -366,6 +366,6 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1_61;
     private javax.swing.JPanel jPanel2_61;
     private javax.swing.JPanel jPanel3_loginbutton_61;
-    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JPasswordField passwordField1_61;
     // End of variables declaration//GEN-END:variables
 }

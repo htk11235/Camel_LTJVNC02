@@ -14,21 +14,21 @@ public class TimekeepingDAO {
     public List<Timekeeping> getAllTimekeeping() throws SQLException {
         List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "select * from timekeeping";
+        String sql_16= "select * from timekeeping";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
 
-            ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs.next()) {
+            while (rs_16.next()) {
                  Timekeeping timekeeping = new Timekeeping();
-                 timekeeping.setTimekeeping_Id(rs.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs.getString("status_"));
+                 timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                 timekeeping.setStatus_(rs_16.getString("status_"));
                
                 timekeepings.add(timekeeping);
             }
@@ -43,16 +43,16 @@ public class TimekeepingDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO timekeeping VALUES(?,?,?)";
+        String sql_16 = "INSERT INTO timekeeping VALUES(?,?,?)";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
             preparedStatement.setInt(1, timekeeping.getEmployee_Id());
             preparedStatement.setDate(2, (Date) timekeeping.getDay_keeping());
             preparedStatement.setString(3, timekeeping.getStatus_());
             
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
+            int rs_16 = preparedStatement.executeUpdate();
+            System.out.println(rs_16);
+            return rs_16;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,17 +63,17 @@ public class TimekeepingDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE timekeeping SET timekeeping_Id = ?, employee_Id =?,  day_keeping=?, status_=?";
+        String sql_16 = "UPDATE timekeeping SET timekeeping_Id = ?, employee_Id =?,  day_keeping=?, status_=?";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
             preparedStatement.setInt(1, timekeeping.getEmployee_Id());
             preparedStatement.setDate(2, (Date) timekeeping.getDay_keeping());
             preparedStatement.setString(3, timekeeping.getStatus_());
 
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
+            int rs_16 = preparedStatement.executeUpdate();
+            System.out.println(rs_16);
+            return rs_16;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -88,14 +88,14 @@ public class TimekeepingDAO {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setDate(1, day);
-            ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs.next()) {
+            while (rs_16.next()) {
                 Timekeeping timekeeping = new Timekeeping();
-                  timekeeping.setTimekeeping_Id(rs.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs.getString("status_"));
+                  timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                 timekeeping.setStatus_(rs_16.getString("status_"));
                
                  timekeepings.add(timekeeping);
                 

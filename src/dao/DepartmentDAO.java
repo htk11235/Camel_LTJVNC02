@@ -21,12 +21,12 @@ public class DepartmentDAO {
      public List<Department> getAllDepartment() throws SQLException {
         List<Department> departments = new ArrayList<Department>();
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM departments Order By department_Id";
+        String sql_16 = "SELECT * FROM departments Order By department_Id";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
 
             ResultSet rs = preparedStatement.executeQuery();
 

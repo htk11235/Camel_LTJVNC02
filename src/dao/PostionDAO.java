@@ -16,19 +16,19 @@ public class PostionDAO {
      public List<Postion> getAllPostion() throws SQLException {
         List<Postion> Poisition_Employee = new ArrayList<Postion>();
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
         String sql = "select * from positions order by position_Id asc";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
 
-            ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs.next()) {
+            while (rs_16.next()) {
                  Postion pos_child = new Postion();
-                 pos_child.setPostion_Id(rs.getInt("position_Id"));
-                 pos_child.setPostion_Name(rs.getString("position_Name"));
+                 pos_child.setPostion_Id(rs_16.getInt("position_Id"));
+                 pos_child.setPostion_Name(rs_16.getString("position_Name"));
                
                 Poisition_Employee.add(pos_child);
             }
@@ -41,20 +41,20 @@ public class PostionDAO {
     }
     public Postion getPostionById(int id) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
         String sql = "SELECT * FROM  positions WHERE position_Id = ?";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
             preparedStatement.setInt(1, id);
-            ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs.next()) {
+            while (rs_16.next()) {
                 Postion postion = new Postion();
 
-                postion.setPostion_Id(rs.getInt("position_Id"));
-                postion.setPostion_Name(rs.getString("position_Name"));
+                postion.setPostion_Id(rs_16.getInt("position_Id"));
+                postion.setPostion_Name(rs_16.getString("position_Name"));
              
                 return postion;
             }
@@ -67,19 +67,19 @@ public class PostionDAO {
     }
  public Postion getPostionByName(String name) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
         String sql = "SELECT * FROM  positions WHERE position_Name = ?";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
             preparedStatement.setString(1, name);
-            ResultSet rs = preparedStatement.executeQuery();
+            ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs.next()) {
+            while (rs_16.next()) {
                 preparedStatement.setString(1, name);
                 Postion postion = new Postion();
-                postion.setPostion_Id(rs.getInt("position_Id"));
-                postion.setPostion_Name(rs.getString("position_Name"));
+                postion.setPostion_Id(rs_16.getInt("position_Id"));
+                postion.setPostion_Name(rs_16.getString("position_Name"));
              
                 return postion;
             }
@@ -92,18 +92,18 @@ public class PostionDAO {
     }
     public int addPostion(Postion postion) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
         String sql = "INSERT INTO positions(position_Name) VALUES(?)";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
             preparedStatement.setString(1, postion.getPostion_Name());
            
             
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
+            int rs_16 = preparedStatement.executeUpdate();
+            System.out.println(rs_16);
+            return rs_16;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -112,20 +112,20 @@ public class PostionDAO {
 
     public int updatePostion(Postion postion) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
         String sql = "UPDATE postions SET postion_Name = ? WHERE position_Id = ?";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
               preparedStatement.setString(1, postion.getPostion_Name());
            
             
             preparedStatement.setInt(2, postion.getPostion_Id());
             
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
+            int rs_16 = preparedStatement.executeUpdate();
+            System.out.println(rs_16);
+            return rs_16;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -134,17 +134,17 @@ public class PostionDAO {
 
     public int deletePostion(int id) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
 
         String sql = "DELETE FROM postions WHERE position_Id = ?";
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
             preparedStatement.setInt(1, id);
 
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
+            int rs_16 = preparedStatement.executeUpdate();
+            System.out.println(rs_16);
+            return rs_16;
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -84,8 +84,8 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1_16 = new javax.swing.JLabel();
+        jScrollPane1_16 = new javax.swing.JScrollPane();
         jTable1_16 = new javax.swing.JTable();
         jButton_Save_16 = new javax.swing.JButton();
         jButton3_16 = new javax.swing.JButton();
@@ -93,10 +93,10 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jButton4_16 = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(119, 119, 119));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
-        jLabel1.setText("timekeeping");
+        jLabel1_16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1_16.setForeground(new java.awt.Color(119, 119, 119));
+        jLabel1_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
+        jLabel1_16.setText("timekeeping");
 
         jTable1_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,7 +121,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1_16);
+        jScrollPane1_16.setViewportView(jTable1_16);
         if (jTable1_16.getColumnModel().getColumnCount() > 0) {
             jTable1_16.getColumnModel().getColumn(0).setResizable(false);
             jTable1_16.getColumnModel().getColumn(1).setResizable(false);
@@ -168,7 +168,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1))
+                                .addComponent(jLabel1_16))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +178,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,13 +192,13 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(2, 2, 2)
                 .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,9 +218,9 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton4_16;
     private javax.swing.JButton jButton_Save_16;
     private com.toedter.calendar.JDateChooser jDateChooser_16;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel1_16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane1_16;
     private javax.swing.JTable jTable1_16;
     // End of variables declaration//GEN-END:variables
 }

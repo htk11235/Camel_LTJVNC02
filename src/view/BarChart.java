@@ -29,10 +29,10 @@ import service.DepartmentService;
 import service.EmployeeService;
 
 public class BarChart extends JPanel{
-    private DepartmentService depService = new DepartmentService();
-    private EmployeeService empService = new EmployeeService();
-     List<Department> listDep = new ArrayList<Department>();
-     List<Employee> listEmp = new ArrayList<Employee>();
+    private DepartmentService depService_16 = new DepartmentService();
+    private EmployeeService empService_16 = new EmployeeService();
+     List<Department> listDep_16 = new ArrayList<Department>();
+     List<Employee> listEmp_16 = new ArrayList<Employee>();
     
  
     public BarChart() throws SQLException {
@@ -46,15 +46,15 @@ public class BarChart extends JPanel{
         this.add(new ChartPanel(createChart(createDataset())));
     }
     private CategoryDataset createDataset() throws SQLException {
-           listDep = depService.getAllDepartment();
-           listEmp = empService.getAllEmployee();
-           int ds[][] = new int[listDep.size()][2];
-           for(int i = 0 ; i< listDep.size(); i++){
-               ds[i][0] = listDep.get(i).getDepartment_Id();
+           listDep_16 = depService_16.getAllDepartment();
+           listEmp_16 = empService_16.getAllEmployee();
+           int ds[][] = new int[listDep_16.size()][2];
+           for(int i = 0 ; i< listDep_16.size(); i++){
+               ds[i][0] = listDep_16.get(i).getDepartment_Id();
                ds[i][1] = 0;
            }
-           for(Employee i : listEmp){
-               for(int j = 0 ; j< listDep.size(); j++){
+           for(Employee i : listEmp_16){
+               for(int j = 0 ; j< listDep_16.size(); j++){
                    if(ds[j][0]==i.getDepartment_Id()){
                        ds[j][1]++;
                    }
@@ -64,7 +64,7 @@ public class BarChart extends JPanel{
         String row = "Row";
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
          for(int i =0; i< ds.length;i++){
-                 dataset.addValue(ds[i][1], row, depService.getDepartmentById(ds[i][0]).getDepartment_Name());
+                 dataset.addValue(ds[i][1], row, depService_16.getDepartmentById(ds[i][0]).getDepartment_Name());
            }
         return dataset;
     }
