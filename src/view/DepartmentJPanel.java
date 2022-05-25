@@ -10,10 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Jonny Dam
- */
 public class DepartmentJPanel extends javax.swing.JPanel {
 
     /**

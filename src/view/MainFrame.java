@@ -15,10 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.border.MatteBorder;
 
-/**
- *
- * @author Jonny Dam
- */
 public class MainFrame extends javax.swing.JFrame {
 int checkMode = 1;
     /**
