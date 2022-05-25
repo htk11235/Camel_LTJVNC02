@@ -4,7 +4,6 @@
  */
 package dao;
 
-import model.Department;
 import model.Postion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,10 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author htk11
- */
 public class PostionDAO {
      public List<Postion> getAllPostion() throws SQLException {
         List<Postion> Poisition_Employee = new ArrayList<Postion>();
@@ -57,7 +52,6 @@ public class PostionDAO {
 
             while (rs.next()) {
                 Postion postion = new Postion();
-                preparedStatement.setInt(1, id);
 
                 postion.setPostion_Id(rs.getInt("position_Id"));
                 postion.setPostion_Name(rs.getString("position_Name"));

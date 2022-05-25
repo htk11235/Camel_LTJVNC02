@@ -12,6 +12,7 @@ import view.PostionJPanel;
 import view.SalaryJPanel;
 import view.TimekeepingJPanel;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.border.MatteBorder;
@@ -93,8 +94,17 @@ import view.DepartmentListJPanel;
                               panel = new EmployeeJPanel();
                               break;
                           case "Timekeeping":
-                              panel = new TimekeepingJPanel();
+                          {
+                              try {
+                                  panel = new TimekeepingJPanel();
+                              } catch (SQLException ex) {
+                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                              } catch (ParseException ex) {
+                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                              }
+                          }
                               break;
+
                           case "Postion":
                           {
                               try {
