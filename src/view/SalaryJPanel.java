@@ -48,25 +48,25 @@ public class SalaryJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel1_53 = new javax.swing.JLabel();
+        jLabel2_53 = new javax.swing.JLabel();
+        jPanel2_53 = new javax.swing.JPanel();
         jTextField_Search_53 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel4_53 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableSalary_53 = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1_53 = new javax.swing.JPanel();
         jButton_SelectMonth_53 = new javax.swing.JButton();
         jButton_SelectYear_53 = new javax.swing.JButton();
         jButton_edit_53 = new javax.swing.JButton();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/carbon_piggy-bank-1.png"))); // NOI18N
+        jLabel1_53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/carbon_piggy-bank-1.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(131, 189, 117));
-        jLabel2.setText("Salary Screen");
+        jLabel2_53.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2_53.setForeground(new java.awt.Color(131, 189, 117));
+        jLabel2_53.setText("Salary Screen");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2_53.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTextField_Search_53.setMinimumSize(new java.awt.Dimension(64, 24));
         jTextField_Search_53.setPreferredSize(new java.awt.Dimension(64, 24));
@@ -76,24 +76,24 @@ public class SalaryJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-search-24.png"))); // NOI18N
+        jLabel4_53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-search-24.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2_53Layout = new javax.swing.GroupLayout(jPanel2_53);
+        jPanel2_53.setLayout(jPanel2_53Layout);
+        jPanel2_53Layout.setHorizontalGroup(
+            jPanel2_53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2_53Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTextField_Search_53, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(jLabel4_53)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2_53Layout.setVerticalGroup(
+            jPanel2_53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTextField_Search_53, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel4)
+            .addGroup(jPanel2_53Layout.createSequentialGroup()
+                .addComponent(jLabel4_53)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -118,21 +118,21 @@ public class SalaryJPanel extends javax.swing.JPanel {
         jButton_SelectYear_53.setForeground(new java.awt.Color(78, 148, 79));
         jButton_SelectYear_53.setText("Select Year");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1_53Layout = new javax.swing.GroupLayout(jPanel1_53);
+        jPanel1_53.setLayout(jPanel1_53Layout);
+        jPanel1_53Layout.setHorizontalGroup(
+            jPanel1_53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1_53Layout.createSequentialGroup()
                 .addComponent(jButton_SelectMonth_53)
                 .addGap(38, 38, 38)
                 .addComponent(jButton_SelectYear_53)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        jPanel1_53Layout.setVerticalGroup(
+            jPanel1_53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_53Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1_53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_SelectMonth_53)
                     .addComponent(jButton_SelectYear_53))
                 .addContainerGap())
@@ -157,19 +157,19 @@ public class SalaryJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel1_53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(71, 71, 71)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel2_53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)))
+                                .addComponent(jLabel2_53)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1_53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,14 +181,14 @@ public class SalaryJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1_53)
+                    .addComponent(jLabel2_53, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addComponent(jPanel2_53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jPanel1_53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_edit_53, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -208,11 +208,11 @@ public class SalaryJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton_SelectMonth_53;
     private javax.swing.JButton jButton_SelectYear_53;
     private javax.swing.JButton jButton_edit_53;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel1_53;
+    private javax.swing.JLabel jLabel2_53;
+    private javax.swing.JLabel jLabel4_53;
+    private javax.swing.JPanel jPanel1_53;
+    private javax.swing.JPanel jPanel2_53;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField_Search_53;
     private javax.swing.JTable tableSalary_53;
