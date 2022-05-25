@@ -9,23 +9,23 @@ package model;
  * @author htk11
  */
 public class Department {
-    private int department_Id;
-    private String department_Name;
+    private int department_Id_16;
+    private String department_Name_16;
 
     public int getDepartment_Id() {
-        return department_Id;
+        return department_Id_16;
     }
 
-    public void setDepartment_Id(int department_Id) {
-        this.department_Id = department_Id;
+    public void setDepartment_Id(int department_Id_16) {
+        this.department_Id_16 = department_Id_16;
     }
 
     public String getDepartment_Name() {
-        return department_Name;
+        return department_Name_16;
     }
 
-    public void setDepartment_Name(String department_Name) {
-        this.department_Name = department_Name;
+    public void setDepartment_Name(String department_Name_16) {
+        this.department_Name_16 = department_Name_16;
     }
     
     

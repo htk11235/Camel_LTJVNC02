@@ -30,12 +30,12 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1_12" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="34" pref="412" max="32767" attributes="0"/>
                               <Component id="jButton_Add_12" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="jButton2_12" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton_Del_12" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
@@ -62,11 +62,11 @@
                   <Component id="jButton_Refresh_12" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+              <Component id="jScrollPane1_12" min="-2" pref="180" max="-2" attributes="0"/>
               <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton_Add_12" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jButton2_12" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="jButton_Del_12" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
@@ -94,7 +94,7 @@
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField_search_12KeyPressed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1_12">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -170,7 +170,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButton2_12">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="db" green="72" red="19" type="rgb"/>
@@ -184,7 +184,7 @@
         <Property name="text" type="java.lang.String" value="EDIT"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2_12ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton_Add_12">

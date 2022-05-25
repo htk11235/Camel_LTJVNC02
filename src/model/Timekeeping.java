@@ -8,41 +8,41 @@ import java.util.Date;
 
 
 public class Timekeeping {
-        private int timekeeping_Id;
-        private int employee_Id;
-        private Date day_keeping;
-        private String status_;
+        private int timekeeping_Id_16;
+        private int employee_Id_16;
+        private Date day_keeping_16;
+        private String status__16;
 
     public int getTimekeeping_Id() {
-        return timekeeping_Id;
+        return timekeeping_Id_16;
     }
 
-    public void setTimekeeping_Id(int timekeeping_Id) {
-        this.timekeeping_Id = timekeeping_Id;
+    public void setTimekeeping_Id(int timekeeping_Id_16) {
+        this.timekeeping_Id_16 = timekeeping_Id_16;
     }
 
     public int getEmployee_Id() {
-        return employee_Id;
+        return employee_Id_16;
     }
 
-    public void setEmployee_Id(int employee_Id) {
-        this.employee_Id = employee_Id;
+    public void setEmployee_Id(int employee_Id_16) {
+        this.employee_Id_16 = employee_Id_16;
     }
 
     public Date getDay_keeping() {
-        return day_keeping;
+        return day_keeping_16;
     }
 
-    public void setDay_keeping(Date day_keeping) {
-        this.day_keeping = day_keeping;
+    public void setDay_keeping(Date day_keeping_16) {
+        this.day_keeping_16 = day_keeping_16;
     }
 
     public String getStatus_() {
-        return status_;
+        return status__16;
     }
 
-    public void setStatus_(String status_) {
-        this.status_ = status_;
+    public void setStatus_(String status__16) {
+        this.status__16 = status__16;
     }
         
 }
