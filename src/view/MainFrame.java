@@ -20,11 +20,12 @@ import javax.swing.border.MatteBorder;
  * @author Jonny Dam
  */
 public class MainFrame extends javax.swing.JFrame {
-
+int checkMode = 1;
     /**
      * Creates new form MainFrame
      */
     public MainFrame() throws SQLException {
+        
         initComponents();
        
         setTitle("Quan Ly");
@@ -439,11 +440,39 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jLabel9_moon_iconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9_moon_iconMouseClicked
         jLabel9_moon_icon.setBorder(new MatteBorder(0,0,4,0,new Color(151,71,255)));
+       
+        if(checkMode==1){
+            jPanel_Background.setBackground(Color.GRAY);
+            jPanel_Background.setForeground(Color.white);
+             jPanel_view.setBackground(Color.GRAY);
+            jPanel_view.setForeground(Color.white);
+             jPanel1_Navbar.setBackground(Color.GRAY);
+            jPanel1_Navbar.setForeground(Color.white);
+             jPanel1.setBackground(Color.GRAY);
+            jPanel1.setForeground(Color.white);
+             jLabel9_datetime1.setForeground(Color.white);
+             user.setForeground(Color.white);
+            checkMode=0;
+        }
+        
         jLabel9_sun_icon.setBorder(null);
     }//GEN-LAST:event_jLabel9_moon_iconMouseClicked
 
     private void jLabel9_sun_iconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9_sun_iconMouseClicked
         jLabel9_moon_icon.setBorder(null);
+         if(checkMode==0){
+            jPanel_Background.setBackground(Color.white);
+            jPanel_Background.setForeground(Color.GRAY);
+             jPanel_view.setBackground(Color.white);
+            jPanel_view.setForeground(Color.GRAY);
+             jPanel1_Navbar.setBackground(Color.white);
+            jPanel1_Navbar.setForeground(Color.GRAY);
+             jPanel1.setBackground(Color.white);
+            jPanel1.setForeground(Color.GRAY);
+            jLabel9_datetime1.setForeground(Color.black);
+            user.setForeground(Color.black);
+            checkMode=1;
+        }
         jLabel9_sun_icon.setBorder(new MatteBorder(0,0,4,0,new Color(255,210,51)));
     }//GEN-LAST:event_jLabel9_sun_iconMouseClicked
 

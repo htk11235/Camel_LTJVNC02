@@ -100,7 +100,7 @@ public class PostionDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO positions(postion_Name) VALUES(?)";
+        String sql = "INSERT INTO positions(position_Name) VALUES(?)";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

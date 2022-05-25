@@ -21,6 +21,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import view.CRUD_View.Emp_Add;
 
 /**
  *
@@ -234,12 +235,13 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                         .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_Refresh_16)
-                        .addContainerGap())))
+                        .addGap(11, 11, 11))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton_Refresh_16)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,19 +271,29 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField_search_16KeyReleased
 
     private void jButton_Refresh_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Refresh_16ActionPerformed
-
-        try {
-            refreshTableData(employeeService.getAllEmployee());
-        } catch (SQLException ex) {
-            Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
+ try {
+                refreshTableData(employeeService.getAllEmployee());
+            } catch (SQLException ex) {
+                Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
 
 
     }//GEN-LAST:event_jButton_Refresh_16ActionPerformed
 
     private void jButton_Add_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_16ActionPerformed
-
-        new Employee_Add().setVisible(true);
+        Emp_Add employee_Add = new Emp_Add();
+         employee_Add.setVisible(true);
+         System.out.println(employee_Add.check);
+         if(employee_Add.check){
+          
+            try {
+                refreshTableData(employeeService.getAllEmployee());
+            } catch (SQLException ex) {
+                Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+         }
         
     }//GEN-LAST:event_jButton_Add_16ActionPerformed
 

@@ -25,7 +25,7 @@ create table employees (
 	birthday datetime,
 	email nvarchar(50) not null unique,
 	tel nvarchar(12),
-	password_ nvarchar(50)
+	password nvarchar(50)
 )
 go
 create table salaries(
