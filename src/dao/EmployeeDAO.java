@@ -184,7 +184,7 @@ public class EmployeeDAO {
 
                 Connection connection = JDBCConnection.getJDBCConnection();
 
-                String sql = "SELECT * FROM employees WHERE email = ? AND password_ = ?";
+                String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, user.getEmail());
                 preparedStatement.setString(2, user.getPassword());

@@ -122,7 +122,11 @@ import view.DepartmentListJPanel;
                           
                           case "DepartmentChart":
                           {
+                          try {
                               panel = new BarChart();
+                          } catch (SQLException ex) {
+                              Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                          }
                           }
                               break;
 

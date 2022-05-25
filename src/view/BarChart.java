@@ -4,8 +4,13 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Paint;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.Department;
+import model.Employee;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
@@ -20,29 +25,47 @@ import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.TextAnchor;
+import service.DepartmentService;
+import service.EmployeeService;
 
-/**
- 
- */
 public class BarChart extends JPanel{
-    public BarChart() {
+    private DepartmentService depService = new DepartmentService();
+    private EmployeeService empService = new EmployeeService();
+     List<Department> listDep = new ArrayList<Department>();
+     List<Employee> listEmp = new ArrayList<Employee>();
+    
+ 
+    public BarChart() throws SQLException {
           AddChart();
           setSize(500, 500);
           setBackground(Color.white);
           setVisible(true);
+       
     }
-    private void AddChart(){
+    private void AddChart() throws SQLException{
         this.add(new ChartPanel(createChart(createDataset())));
     }
-    private CategoryDataset createDataset() {
+    private CategoryDataset createDataset() throws SQLException {
+           listDep = depService.getAllDepartment();
+           listEmp = empService.getAllEmployee();
+           int ds[][] = new int[listDep.size()][2];
+           for(int i = 0 ; i< listDep.size(); i++){
+               ds[i][0] = listDep.get(i).getDepartment_Id();
+               ds[i][1] = 0;
+           }
+           for(Employee i : listEmp){
+               for(int j = 0 ; j< listDep.size(); j++){
+                   if(ds[j][0]==i.getDepartment_Id()){
+                       ds[j][1]++;
+                   }
+               }
+           }
+          
         String row = "Row";
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(1, row, "A");
-        dataset.addValue(2, row, "B");
-        dataset.addValue(3, row, "C");
-        dataset.addValue(4, row, "D");
-        dataset.addValue(5, row, "E");
-        dataset.addValue(6, row, "F");
+         for(int i =0; i< ds.length;i++){
+                 dataset.addValue(ds[i][1], row, depService.getDepartmentById(ds[i][0]).getDepartment_Name());
+           }
         return dataset;
     }
 
