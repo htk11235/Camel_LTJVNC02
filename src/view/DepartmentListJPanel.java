@@ -22,11 +22,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 public class DepartmentListJPanel extends javax.swing.JPanel {
-    private DepartmentService departmentService;
+    private DepartmentService departmentService16;
     
     public DefaultTableModel getModelTable() {
-        DefaultTableModel model = (DefaultTableModel) jTable_12.getModel();
-        return model;
+        DefaultTableModel model16 = (DefaultTableModel) jTable_12.getModel();
+        return model16;
     }
 
     public void searchTable(String value) {
@@ -35,24 +35,24 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
         trs.setRowFilter(RowFilter.regexFilter(value));
     }
 
-    DefaultTableModel defaultTableModel;
+    DefaultTableModel defaultTableModel16;
 
     public DepartmentListJPanel() throws SQLException {
         initComponents();
-        departmentService = new DepartmentService();
-        defaultTableModel = new DefaultTableModel() {
+        departmentService16 = new DepartmentService();
+        defaultTableModel16 = new DefaultTableModel() {
 //            @Override
 //            public boolean isCellEditable(int row, int column) {
 //                return false;
 //            }
         };
-        jTable_12.setModel(defaultTableModel);
-         defaultTableModel.addColumn("id");
-        defaultTableModel.addColumn("name");
-        setTableData(departmentService.getAllDepartment());
+        jTable_12.setModel(defaultTableModel16);
+         defaultTableModel16.addColumn("id");
+        defaultTableModel16.addColumn("name");
+        setTableData(departmentService16.getAllDepartment());
         
         //design table
-         jTable_12.setModel(defaultTableModel);
+         jTable_12.setModel(defaultTableModel16);
         jTable_12.getTableHeader().setOpaque(false);
         
 //        header design
@@ -76,12 +76,12 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
 
     private void setTableData(List<Department> departments) {
         for (Department department : departments) {
-            defaultTableModel.addRow(new Object[]{department.getDepartment_Id(), department.getDepartment_Name()});
+            defaultTableModel16.addRow(new Object[]{department.getDepartment_Id(), department.getDepartment_Name()});
         }
     }
 
     private void refreshTableData(List<Department> departments) {
-        defaultTableModel.setRowCount(0);
+        defaultTableModel16.setRowCount(0);
         setTableData(departments);
     }
 
@@ -233,10 +233,10 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton_Add_12ActionPerformed
 
     private void jButton_Refresh_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Refresh_12ActionPerformed
-        DepartmentService departmentService;
-        departmentService = new DepartmentService();
+        DepartmentService departmentService16;
+        departmentService16 = new DepartmentService();
         try {
-            refreshTableData(departmentService.getAllDepartment());
+            refreshTableData(departmentService16.getAllDepartment());
         } catch (SQLException ex) {
             Logger.getLogger(DepartmentListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -252,7 +252,7 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
          DefaultTableModel tblModel = (DefaultTableModel) jTable_12.getModel();
         int id = Integer.parseInt(tblModel.getValueAt(jTable_12.getSelectedRow(), 0).toString());
         try {
-            departmentService.deleteDepartment(id);
+            departmentService16.deleteDepartment(id);
         } catch (SQLException ex) {
             Logger.getLogger(DepartmentListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
