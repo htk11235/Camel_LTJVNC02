@@ -97,9 +97,7 @@ import view.DepartmentListJPanel;
                           {
                               try {
                                   panel = new TimekeepingJPanel();
-                              } catch (SQLException ex) {
-                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
-                              } catch (ParseException ex) {
+                              } catch (SQLException | ParseException ex) {
                                   Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
                               }
                           }
