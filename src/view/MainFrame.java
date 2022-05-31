@@ -89,7 +89,7 @@ int checkMode = 1;
         jPanel_Background_61.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_Background_61.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel_view_61.setBackground(new java.awt.Color(235, 236, 240));
+        jPanel_view_61.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_view_61.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         jPanel_view_61.setForeground(new java.awt.Color(255, 255, 255));
         jPanel_view_61.setPreferredSize(new java.awt.Dimension(650, 600));

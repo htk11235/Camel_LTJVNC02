@@ -73,7 +73,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         timekeepings = timekeepingService.getTimekeepingByDay(new java.sql.Date(date.getTime()));
         Timekeeping timekeeping = new Timekeeping();
         for (Timekeeping i : timekeepings) {
-            model.addRow(new Object[]{i.getTimekeeping_Id(),i.getEmployee_Id(),
+            model.addRow(new Object[]{i.getDay_keeping(),i.getEmployee_Id(),
                 employeeService.getEmployeeById(i.getEmployee_Id()).getEmployee_Name(),
                 (i.getStatus_().equals("Yes") ? true : false)
             });
@@ -103,12 +103,13 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jLabel1_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
         jLabel1_16.setText("timekeeping");
 
+        jTable1_16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTable1_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Emp_id", "Name", "Status"
+                "date", "Emp_id", "Name", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -129,6 +130,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jTable1_16.setColumnSelectionAllowed(true);
         jTable1_16.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         jTable1_16.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        jTable1_16.setShowGrid(true);
         jScrollPane1_16.setViewportView(jTable1_16);
         jTable1_16.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (jTable1_16.getColumnModel().getColumnCount() > 0) {
@@ -225,8 +227,9 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
                                 .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,10 +245,10 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel2)
-                .addGap(2, 2, 2)
-                .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooser_16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

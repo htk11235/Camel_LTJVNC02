@@ -6,6 +6,7 @@ package view;
 
 import bean.DanhMucBean;
 import controller.ChuyenManHinh;
+import java.awt.Color;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,8 @@ public class DepartmentJPanel extends javax.swing.JPanel {
      */
     public DepartmentJPanel() throws SQLException {
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
+        jPanel1_12.setBackground(new Color(0,0,0,0));
         ChuyenManHinh controller = new ChuyenManHinh(jPanel1_Screen_12);
         controller.setDashboardOfDepartment(jPanel2_list_12, jLabel2_list_12);
         List<DanhMucBean> listDanhMuc = new ArrayList<>();
