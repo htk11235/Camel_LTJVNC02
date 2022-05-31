@@ -27,4 +27,7 @@ public class TimekeepingService {
     public  List<Timekeeping> getTimekeepingByDay(Date day) throws SQLException {
        return td_16.getTimekeepingByDay(day);
     }
+    public  Timekeeping getTimekeepingById(int i) throws SQLException {
+        return td_16.getTimekeepingById(i);
+    }
 }

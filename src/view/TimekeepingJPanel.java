@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -32,7 +33,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private TimekeepingService timekeepingService;
 
     DefaultTableModel defaultTableModel;
-
+    
     public TimekeepingJPanel() throws SQLException, ParseException {
         employeeService = new EmployeeService();
         postionService = new PostionService();
@@ -56,7 +57,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jTable1_16.setOpaque(true);
         jTable1_16.setFillsViewportHeight(true);
         jTable1_16.setBackground(new Color(255, 255, 255));
-
+        
         setTableData("25/5/2022");
 
     }
@@ -71,11 +72,10 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
         timekeepings = timekeepingService.getTimekeepingByDay(new java.sql.Date(date.getTime()));
         Timekeeping timekeeping = new Timekeeping();
-        System.out.println(timekeepings.size());
         for (Timekeeping i : timekeepings) {
-            model.addRow(new Object[]{i.getEmployee_Id(),
+            model.addRow(new Object[]{i.getTimekeeping_Id(),i.getEmployee_Id(),
                 employeeService.getEmployeeById(i.getEmployee_Id()).getEmployee_Name(),
-                (i.getStatus_().equals("No") ? false : true)
+                (i.getStatus_().equals("Yes") ? true : false)
             });
         }
     }
@@ -97,7 +97,6 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jDateChooser_16 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jButton4_16 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         jLabel1_16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1_16.setForeground(new java.awt.Color(119, 119, 119));
@@ -109,14 +108,14 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Emp_id", "Name", "Status"
+                "Id", "Emp_id", "Name", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -128,11 +127,14 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             }
         });
         jTable1_16.setColumnSelectionAllowed(true);
+        jTable1_16.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        jTable1_16.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         jScrollPane1_16.setViewportView(jTable1_16);
         jTable1_16.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (jTable1_16.getColumnModel().getColumnCount() > 0) {
             jTable1_16.getColumnModel().getColumn(0).setResizable(false);
             jTable1_16.getColumnModel().getColumn(1).setResizable(false);
+            jTable1_16.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jButton_Save_16.setBackground(new java.awt.Color(0, 204, 102));
@@ -199,8 +201,6 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jButton4_16.setMinimumSize(new java.awt.Dimension(61, 23));
         jButton4_16.setPreferredSize(new java.awt.Dimension(61, 23));
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,53 +210,63 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1_16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 36, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(2, 2, 2)
-                        .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2)
+                .addGap(2, 2, 2)
+                .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
+                .addContainerGap(35, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Save_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Save_16ActionPerformed
-        // TODO add your handling code here:
+        TimekeepingService timekeepingService = new TimekeepingService();
+        Timekeeping timekeeping = new Timekeeping();
+        DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            try {
+                timekeeping.setTimekeeping_Id((int) model.getValueAt(i, 0));
+                timekeeping.setStatus_(model.getValueAt(i, 3).toString().equals("true")?"Yes":"No");
+                System.out.println(timekeeping.getStatus_());
+                System.out.println(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()));
+                if(!(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()))){
+                    if(timekeepingService.updateTimekeeping(timekeeping)==1){
+                        
+                        System.out.println("Khoa");}
+                    System.out.println("Khoa1");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(TimekeepingJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }//GEN-LAST:event_jButton_Save_16ActionPerformed
 
     private void jDateChooser_16PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser_16PropertyChange
@@ -302,7 +312,6 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton4_16;
     private javax.swing.JButton jButton_Save_16;
     private com.toedter.calendar.JDateChooser jDateChooser_16;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1_16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1_16;

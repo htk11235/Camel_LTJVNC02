@@ -63,13 +63,13 @@ public class TimekeepingDAO {
 
         Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql_16 = "UPDATE timekeeping SET timekeeping_Id = ?, employee_Id =?,  day_keeping=?, status_=?";
+        String sql_16 = "UPDATE timekeeping SET status_ = ? where timekeeping_Id = ? ";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
-            preparedStatement.setInt(1, timekeeping.getEmployee_Id());
-            preparedStatement.setDate(2, (Date) timekeeping.getDay_keeping());
-            preparedStatement.setString(3, timekeeping.getStatus_());
+ 
+            preparedStatement.setString(1, timekeeping.getStatus_());
+            preparedStatement.setInt(2, timekeeping.getTimekeeping_Id());
 
             int rs_16 = preparedStatement.executeUpdate();
             System.out.println(rs_16);
@@ -101,6 +101,34 @@ public class TimekeepingDAO {
                 
             }
             return timekeepings;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    public  Timekeeping getTimekeepingById(int i) throws SQLException {
+        
+        Connection connection = JDBCConnection.getJDBCConnection();
+
+        String sql = "SELECT * FROM  timekeeping WHERE timekeeping_Id=?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, i);
+            ResultSet rs_16 = preparedStatement.executeQuery();
+
+            while (rs_16.next()) {
+                Timekeeping timekeeping = new Timekeeping();
+                  timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                 timekeeping.setStatus_(rs_16.getString("status_"));
+               
+                
+                return timekeeping;
+            }
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
