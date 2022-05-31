@@ -33,7 +33,10 @@ create table salaries(
 	employee_Id int foreign key references employees(employee_Id)
 		on delete cascade
 		on update cascade,
-	coefficient_salary int default 3	
+	coefficient_salary int default 3,
+	bonus float default 0,
+	year int,
+	month int
 )
 go
 create table timekeeping(
@@ -65,23 +68,15 @@ begin
 		if not exists (select * from inserted)
 			--delete
 			begin
-				DECLARE @i INT = 0;
-				WHILE @i < 3650
-				BEGIN
 					delete from timekeeping 
-					where employee_Id=(select employee_Id from deleted) and day_keeping=(select FORMAT( GETDATE()+365*5-@i,'yyyy-MM-dd'))
-					SET @i = @i + 1;
-				END;
+					where employee_Id=(select employee_Id from deleted)
 			end;
 		else 
 			begin 
 				--update
-				DECLARE @z INT = 0;
-				WHILE @z < 3650
 				BEGIN
 					delete from timekeeping 
-					where employee_Id=(select employee_Id from deleted) and day_keeping=(select FORMAT( GETDATE()+365*5-@z,'yyyy-MM-dd'))
-					SET @z = @z + 1;
+					where employee_Id=(select employee_Id from deleted)
 				END;
 				DECLARE @x INT = 0;
 			WHILE @x < 3650
@@ -101,8 +96,18 @@ begin
 	if not exists (select * from deleted)
 		--insert
 		begin
-			insert into salaries values
-				((select employee_Id from inserted),3)
+			DECLARE @z INT = 0;
+			DECLARE @t INT = 0;
+			WHILE @z < 10
+			BEGIN
+				WHILE @t < 12
+				BEGIN
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-5+@z,@t+1)
+					set @t=@t+1
+				END;
+				set @z=@z+1
+			END;
 		end;
 	else
 		if not exists (select * from inserted)
@@ -111,6 +116,24 @@ begin
 				delete from salaries 
 				where employee_Id = (select employee_Id from deleted)
 			end;
+		--else
+		--	--update
+		--	begin
+		--		delete from salaries 
+		--		where employee_Id = (select employee_Id from deleted)
+		--		DECLARE @i INT = 0;
+		--		DECLARE @j INT = 0;
+		--		WHILE @i < 10
+		--			BEGIN
+		--				WHILE @j < 12
+		--				BEGIN
+		--					insert into salaries values
+		--						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-5+@i,@j+1)
+		--						set @j=@j+1
+		--				END;
+		--				set @i=@i+1
+		--			END;
+		--	end;
 end
 GO
 insert into positions values
