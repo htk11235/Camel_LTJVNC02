@@ -33,9 +33,7 @@ create table salaries(
 	employee_Id int foreign key references employees(employee_Id)
 		on delete cascade
 		on update cascade,
-	coefficient_salary int,
-	month_ int,
-	year_ int	
+	coefficient_salary int default 3	
 )
 go
 create table timekeeping(
@@ -49,7 +47,7 @@ create table timekeeping(
 go
 CREATE or alter TRIGGER addEmployInTimekeeping
 ON employees
-AFTER  insert,delete
+AFTER  insert,delete,update
 AS
 begin
 	if not exists (select * from deleted)
@@ -94,6 +92,26 @@ begin
 			END;
 			end;
 end
+go
+CREATE or alter TRIGGER addEmployInSalary
+ON employees
+AFTER  insert,delete
+AS
+begin
+	if not exists (select * from deleted)
+		--insert
+		begin
+			insert into salaries values
+				((select employee_Id from inserted),3)
+		end;
+	else
+		if not exists (select * from inserted)
+			--delete
+			begin
+				delete from salaries 
+				where employee_Id = (select employee_Id from deleted)
+			end;
+end
 GO
 insert into positions values
 	('Staff'),
@@ -107,7 +125,5 @@ insert into departments values
 	('Design')
 go
 insert into employees values
-	('Sub acc','1','3','F','12/10/2002','1','000','2')
-go
-insert into salaries values
-	('1',10,'5','2022')
+	('Sub acc','1','3','F','12/10/2002','1','000','1')
+
