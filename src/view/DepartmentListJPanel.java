@@ -175,7 +175,7 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton_Refresh_12.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Refresh_12.setBackground(new java.awt.Color(226, 226, 226));
         jButton_Refresh_12.setForeground(new java.awt.Color(51, 51, 51));
         jButton_Refresh_12.setText("Refresh");
         jButton_Refresh_12.setBorder(null);
