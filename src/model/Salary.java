@@ -10,7 +10,32 @@ package model;
  * @author PC
  */
 public class Salary {
-    private int salary_Id,employee_Id,coefficient_salary;
+    private int salary_Id,employee_Id,coefficient_salary,year,month;
+    private double bonus;
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
 
     public int getSalary_Id() {
         return salary_Id;
