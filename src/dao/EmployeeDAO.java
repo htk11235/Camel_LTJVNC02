@@ -141,21 +141,22 @@ public class EmployeeDAO {
 
         Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE employees SET employee_Name = ?, department_Id =?,  postion_Id=?, sex=?, birthday=?, email=?, tel=? WHERE employee_Id = ?";
+        String sql = "UPDATE employees SET employee_Name = ?, department_Id =?,   sex=?, birthday=?, email=?, tel=? WHERE employee_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
              preparedStatement.setString(1, employee.getEmployee_Name());
             preparedStatement.setInt(2, employee.getDepartment_Id());
-            preparedStatement.setString(4, employee.getSex());
-            preparedStatement.setDate(5, (Date) employee.getBirthday());
-            preparedStatement.setString(6, employee.getEmail());
-            preparedStatement.setString(7, employee.getTel());
-            preparedStatement.setInt(8, employee.getEmployee_Id());
+//            preparedStatement.setInt(3, employee.getPosition_Id());
+            preparedStatement.setString(3, employee.getSex());
+            preparedStatement.setDate(4, (Date) employee.getBirthday());
+            preparedStatement.setString(5, employee.getEmail());
+            preparedStatement.setString(6, employee.getTel());
+            preparedStatement.setInt(7, employee.getEmployee_Id());
 
             int rs_16 = preparedStatement.executeUpdate();
             System.out.println(rs_16);
-            return rs_16;
+            return 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
