@@ -68,9 +68,12 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-              //design table
-         jTable_16.setModel(defaultTableModel_61);
+          jTable_16.setModel(defaultTableModel_61);
         jTable_16.getTableHeader().setOpaque(false);
+        defaultTableModel_61.fireTableDataChanged();
+        jTable_16.repaint();
+              //design table
+       
         
 //        header design
             DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
@@ -274,25 +277,16 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             } catch (SQLException ex) {
                 Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
-       
-
-
     }//GEN-LAST:event_jButton_Refresh_16ActionPerformed
 
     private void jButton_Add_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_16ActionPerformed
         Emp_Add employee_Add = new Emp_Add();
          employee_Add.setVisible(true);
-         System.out.println(employee_Add.check);
-         if(employee_Add.check){
-          
             try {
                 refreshTableData(employeeService_61.getAllEmployee());
             } catch (SQLException ex) {
                 Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
-       
-         }
-        
     }//GEN-LAST:event_jButton_Add_16ActionPerformed
 
     private void jButton_Edit_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Edit_16ActionPerformed
