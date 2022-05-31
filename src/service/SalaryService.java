@@ -5,10 +5,28 @@
  */
 package service;
 
+import dao.SalaryDAO;
+import java.sql.SQLException;
+import java.util.List;
+import model.Salary;
+
 /**
  *
  * @author PC
  */
 public class SalaryService {
-    
+    private SalaryDAO sd;
+        public List<Salary> getAllSalary() throws SQLException {
+            return sd.getAllSalary();
+        }
+          public Salary getSalaryById(int id) throws SQLException {
+              return sd.getSalaryById(id);
+          }
+          public List<Salary> getSalaryByYearAndMonth(int m,int y) throws SQLException {
+              return sd.getSalaryByYearAndMonth(m,y);
+          }
+          
+              public int updateSalary(Salary sa) throws SQLException {
+                  return sd.updateSalary(sa);
+              }
 }
