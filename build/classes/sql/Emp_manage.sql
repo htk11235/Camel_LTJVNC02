@@ -74,37 +74,40 @@ begin
 					where employee_Id=(select employee_Id from deleted) and day_keeping=(select FORMAT( GETDATE()+365*5-@i,'yyyy-MM-dd'))
 					SET @i = @i + 1;
 				END;
-			end;		
+			end;
+		else 
+			begin 
+				--update
+				DECLARE @z INT = 0;
+				WHILE @z < 3650
+				BEGIN
+					delete from timekeeping 
+					where employee_Id=(select employee_Id from deleted) and day_keeping=(select FORMAT( GETDATE()+365*5-@z,'yyyy-MM-dd'))
+					SET @z = @z + 1;
+				END;
+				DECLARE @x INT = 0;
+			WHILE @x < 3650
+			BEGIN
+				insert into timekeeping values
+				((select employee_Id from inserted),(select FORMAT( GETDATE()+365*5-@x,'yyyy-MM-dd')),'No')
+				SET @x = @x + 1;
+			END;
+			end;
 end
 GO
-delete from positions
-DBCC CHECKIDENT ('positions', RESEED, 1)
 insert into positions values
 	('Staff'),
 	('Manager'),
 	('President')
 go
-delete from departments
-DBCC CHECKIDENT ('departments', RESEED, 1)
 insert into departments values
 	('Font-end'),
 	('Back-end'),
 	('Marketing'),
 	('Design')
 go
-delete from employees
-DBCC CHECKIDENT ('employees', RESEED, 1)
 insert into employees values
-	('Dam Phu Quoc','1','1','M','12/10/2002','damphuquoc@gmail.com','0777456902','1'),
-	('Le Anh Quoc','2','1','M','12/10/2002','pearuk@gmail.com','0901960923','1'),
-	('Huynh Thi Khoa','2','1','F','12/10/2002','httk@gmail.com','0376806330','1'),
 	('Sub acc','1','3','F','12/10/2002','1','000','2')
 go
-
-
-go
-delete from salaries
-DBCC CHECKIDENT ('salaries', RESEED, 1)
 insert into salaries values
 	('1',10,'5','2022')
-

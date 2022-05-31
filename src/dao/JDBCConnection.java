@@ -5,9 +5,9 @@ import java.sql.*;
 public class JDBCConnection {
 
     public static Connection getJDBCConnection() throws SQLException {
-        final String url = "jdbc:sqlserver://NAZIJESUS:1433;databaseName = Employee_Management";
+        final String url = "jdbc:sqlserver://LAPTOP-U367HF3D\\BAP:1433;databaseName = Employee_Management";
         final String userName = "sa";
-        final String password = "11235";
+        final String password = "Baptr2304";
 
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -20,4 +20,5 @@ public class JDBCConnection {
     }
 }
 //NAZIJESUS
+//LAPTOP-U367HF3D\BAP
 
