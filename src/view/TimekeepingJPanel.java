@@ -58,7 +58,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jTable1_16.setFillsViewportHeight(true);
         jTable1_16.setBackground(new Color(255, 255, 255));
 
-        setTableData("25/5/2022");
+        setTableData("2/6/2022");
 
     }
 
@@ -73,7 +73,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         timekeepings = timekeepingService.getTimekeepingByDay(new java.sql.Date(date.getTime()));
         Timekeeping timekeeping = new Timekeeping();
         for (Timekeeping i : timekeepings) {
-            model.addRow(new Object[]{i.getDay_keeping(), i.getEmployee_Id(),
+            model.addRow(new Object[]{i.getTimekeeping_Id(),i.getDay_keeping(), i.getEmployee_Id(),
                 employeeService.getEmployeeById(i.getEmployee_Id()).getEmployee_Name(),
                 (i.getStatus_().equals("Yes") ? true : false)
             });
@@ -103,20 +103,21 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jLabel1_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/la_business-time-1.png"))); // NOI18N
         jLabel1_16.setText("timekeeping");
 
-        jTable1_16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTable1_16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable1_16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTable1_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Date", "Emp_id", "Name", "Status"
+                "Id", "Date", "Emp_id", "Name", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -137,6 +138,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
             jTable1_16.getColumnModel().getColumn(0).setResizable(false);
             jTable1_16.getColumnModel().getColumn(1).setResizable(false);
             jTable1_16.getColumnModel().getColumn(2).setResizable(false);
+            jTable1_16.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jButton_Save_16.setBackground(new java.awt.Color(0, 204, 102));
@@ -225,21 +227,20 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1_16)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDateChooser_16, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -252,13 +253,13 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jDateChooser_16, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Save_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jButton3_16.getAccessibleContext().setAccessibleName("Un Tick All");
@@ -270,13 +271,11 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
             try {
-                timekeeping.setTimekeeping_Id((int) model.getValueAt(i, 0));
-                timekeeping.setStatus_(model.getValueAt(i, 3).toString().equals("true") ? "Yes" : "No");
+                timekeeping.setTimekeeping_Id(Integer.parseInt(model.getValueAt(i, 0).toString()));
+                timekeeping.setStatus_(model.getValueAt(i, 4).toString().equals("true") ? "Yes" : "No");
 
                 if (!(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()))) {
                     if (timekeepingService.updateTimekeeping(timekeeping) == 1) {
-
-                        System.out.println("Khoa");
                     }
 
                 }
@@ -327,7 +326,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private void jButton4_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_16ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(true, i, 3);
+            model.setValueAt(true, i, 4);
         }
 
     }//GEN-LAST:event_jButton4_16ActionPerformed
@@ -335,7 +334,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private void jButton3_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_16ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(false, i, 3);
+            model.setValueAt(false, i, 4);
         }
     }//GEN-LAST:event_jButton3_16ActionPerformed
 
