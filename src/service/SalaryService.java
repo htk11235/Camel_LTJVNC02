@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package service;
 
 import dao.SalaryDAO;
@@ -10,27 +5,23 @@ import java.sql.SQLException;
 import java.util.List;
 import model.Salary;
 
-/**
- *
- * @author PC
- */
 public class SalaryService {
 
-    private SalaryDAO sd = new SalaryDAO();
+        private SalaryDAO sd12 = new SalaryDAO();
 
-    public List<Salary> getAllSalary() throws SQLException {
-        return sd.getAllSalary();
-    }
+        public List<Salary> getAllSalary() throws SQLException {
+                return sd12.getAllSalary();
+        }
 
-    public Salary getSalaryById(int id) throws SQLException {
-        return sd.getSalaryById(id);
-    }
+        public Salary getSalaryById(int id) throws SQLException {
+                return sd12.getSalaryById(id);
+        }
 
-    public List<Salary> getSalaryByYearAndMonth(int m, int y) throws SQLException {
-        return sd.getSalaryByYearAndMonth(m, y);
-    }
+        public List<Salary> getSalaryByYearAndMonth(int m, int y) throws SQLException {
+                return sd12.getSalaryByYearAndMonth(m, y);
+        }
 
-    public int updateSalary(Salary sa) throws SQLException {
-        return sd.updateSalary(sa);
-    }
+        public int updateSalary(Salary sa) throws SQLException {
+                return sd12.updateSalary(sa);
+        }
 }

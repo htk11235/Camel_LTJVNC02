@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package service;
 
 import dao.EmployeeDAO;
@@ -9,36 +5,35 @@ import model.Employee;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author htk11
- */
 public class EmployeeService {
-     private EmployeeDAO employeeDAO_16;
 
-    public EmployeeService() {
-        employeeDAO_16 = new EmployeeDAO();
-    }
+        private EmployeeDAO employeeDAO_16;
 
-    public List<Employee> getAllEmployee() throws SQLException {
-        return employeeDAO_16.getAllEmployee();
-    }
+        public EmployeeService() {
+                employeeDAO_16 = new EmployeeDAO();
+        }
 
-    public Employee getEmployeeById(int id) throws SQLException {
-        return employeeDAO_16.getEmployeeById(id);
-    }
-public Employee getEmployeeByEmail(String email) throws SQLException {
-     return employeeDAO_16.getEmployeeByEmail(email);
-}
-    public int addEmployee(Employee employee) throws SQLException {
-        return employeeDAO_16.addEmployee(employee);
-    }
+        public List<Employee> getAllEmployee() throws SQLException {
+                return employeeDAO_16.getAllEmployee();
+        }
 
-    public int updateEmployee(Employee employee) throws SQLException {
-        return employeeDAO_16.updateEmployee(employee);
-    }
+        public Employee getEmployeeById(int id) throws SQLException {
+                return employeeDAO_16.getEmployeeById(id);
+        }
 
-    public int deleteEmployee(int id) throws SQLException {
-        return employeeDAO_16.deleteEmployee(id);
-    }
+        public Employee getEmployeeByEmail(String email) throws SQLException {
+                return employeeDAO_16.getEmployeeByEmail(email);
+        }
+
+        public int addEmployee(Employee employee) throws SQLException {
+                return employeeDAO_16.addEmployee(employee);
+        }
+
+        public int updateEmployee(Employee employee) throws SQLException {
+                return employeeDAO_16.updateEmployee(employee);
+        }
+
+        public int deleteEmployee(int id) throws SQLException {
+                return employeeDAO_16.deleteEmployee(id);
+        }
 }
