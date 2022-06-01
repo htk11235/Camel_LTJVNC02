@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
-
-/**
- *
- * @author htk11
- */
 
 import model.Department;
 import java.sql.Connection;
@@ -18,147 +9,147 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentDAO {
-     public List<Department> getAllDepartment() throws SQLException {
-        List<Department> departments = new ArrayList<Department>();
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+        public List<Department> getAllDepartment() throws SQLException {
+                List<Department> departments = new ArrayList<Department>();
 
-        String sql_16 = "SELECT * FROM departments Order By department_Id";
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
+                String sql_16 = "SELECT * FROM departments Order By department_Id";
 
-            ResultSet rs = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
 
-            while (rs.next()) {
-                Department department = new Department();
+                        ResultSet rs = preparedStatement.executeQuery();
 
-                department.setDepartment_Id(rs.getInt("department_Id"));
-                department.setDepartment_Name(rs.getString("department_Name"));
-               
-                departments.add(department);
-            }
+                        while (rs.next()) {
+                                Department department = new Department();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                                department.setDepartment_Id(rs.getInt("department_Id"));
+                                department.setDepartment_Name(rs.getString("department_Name"));
+
+                                departments.add(department);
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return departments;
         }
 
-        return departments;
-    }
-    
+        public Department getDepartmentById(int id) throws SQLException {
 
-    public Department getDepartmentById(int id) throws SQLException {
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                String sql = "SELECT * FROM  departments WHERE department_Id = ?";
 
-        String sql = "SELECT * FROM  departments WHERE department_Id = ?";
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setInt(1, id);
+                        ResultSet rs = preparedStatement.executeQuery();
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, id);
-            ResultSet rs = preparedStatement.executeQuery();
+                        while (rs.next()) {
+                                Department department = new Department();
+                                preparedStatement.setInt(1, id);
 
-            while (rs.next()) {
-                Department department = new Department();
-                preparedStatement.setInt(1, id);
+                                department.setDepartment_Id(rs.getInt("department_Id"));
+                                department.setDepartment_Name(rs.getString("department_Name"));
 
-                department.setDepartment_Id(rs.getInt("department_Id"));
-                department.setDepartment_Name(rs.getString("department_Name"));
-             
-                return department;
-            }
+                                return department;
+                        }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
         }
 
-        return null;
-    }
-  public Department getDepartmentByName(String  name) throws SQLException {
+        public Department getDepartmentByName(String name) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM  departments WHERE department_Name = ?";
+                String sql = "SELECT * FROM  departments WHERE department_Name = ?";
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, name);
-            ResultSet rs = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setString(1, name);
+                        ResultSet rs = preparedStatement.executeQuery();
 
-            while (rs.next()) {
-                Department department = new Department();
-                preparedStatement.setString(1, name);
+                        while (rs.next()) {
+                                Department department = new Department();
+                                preparedStatement.setString(1, name);
 
-                department.setDepartment_Id(rs.getInt("department_Id"));
-                department.setDepartment_Name(rs.getString("department_Name"));
-             
-                return department;
-            }
+                                department.setDepartment_Id(rs.getInt("department_Id"));
+                                department.setDepartment_Name(rs.getString("department_Name"));
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                                return department;
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
         }
 
-        return null;
-    }
-    public int addDepartment(Department department) throws SQLException {
+        public int addDepartment(Department department) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "INSERT INTO departments(department_Name) VALUES(?)";
+                String sql = "INSERT INTO departments(department_Name) VALUES(?)";
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, department.getDepartment_Name());
-           
-            
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setString(1, department.getDepartment_Name());
+
+                        int rs = preparedStatement.executeUpdate();
+                        System.out.println(rs);
+                        return rs;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
-        return 0;
-    }
 
-    public int updateDepartment(Department department) throws SQLException {
+        public int updateDepartment(Department department) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE departments SET department_Name = ? WHERE department_Id = ?";
+                String sql = "UPDATE departments SET department_Name = ? WHERE department_Id = ?";
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-              preparedStatement.setString(1, department.getDepartment_Name());
-           
-            
-            preparedStatement.setInt(2, department.getDepartment_Id());
-            
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setString(1, department.getDepartment_Name());
+
+                        preparedStatement.setInt(2, department.getDepartment_Id());
+
+                        int rs = preparedStatement.executeUpdate();
+                        System.out.println(rs);
+                        return rs;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
-        return 0;
-    }
 
-    public int deleteDepartment(int id) throws SQLException {
+        public int deleteDepartment(int id) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql = "DELETE FROM departments WHERE department_Id = ?";
+                String sql = "DELETE FROM departments WHERE department_Id = ?";
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, id);
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setInt(1, id);
 
-            int rs = preparedStatement.executeUpdate();
-            System.out.println(rs);
-            return rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        int rs = preparedStatement.executeUpdate();
+                        System.out.println(rs);
+                        return rs;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
-        return 0;
-    }
 }

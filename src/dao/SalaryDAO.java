@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,121 +9,117 @@ import java.util.List;
 
 import model.Salary;
 
-/**
- *
- * @author PC
- */
 public class SalaryDAO {
-    public List<Salary> getAllSalary() throws SQLException {
-        List<Salary> sas = new ArrayList<Salary>();
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+        public List<Salary> getAllSalary() throws SQLException {
+                List<Salary> sas = new ArrayList<Salary>();
 
-        String sql = "select * from salaries order by salary_Id asc";
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
+                String sql = "select * from salaries order by salary_Id asc";
 
-            ResultSet rs_16 = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
 
-            while (rs_16.next()) {
-                 Salary sa_child = new Salary();
-                 sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
-                 sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
-                 sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
-                 sa_child.setBonus(rs_16.getDouble("bonus"));
-                 sa_child.setYear(rs_16.getInt("year"));
-                 sa_child.setMonth(rs_16.getInt("month"));
-                sas.add(sa_child);
-            }
+                        ResultSet rs_16 = preparedStatement.executeQuery();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        while (rs_16.next()) {
+                                Salary sa_child = new Salary();
+                                sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
+                                sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
+                                sa_child.setBonus(rs_16.getDouble("bonus"));
+                                sa_child.setYear(rs_16.getInt("year"));
+                                sa_child.setMonth(rs_16.getInt("month"));
+                                sas.add(sa_child);
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return sas;
         }
 
-        return sas;
-    }
-    public Salary getSalaryById(int id) throws SQLException {
+        public Salary getSalaryById(int id) throws SQLException {
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM  salaries WHERE salary_Id = ?";
+                String sql = "SELECT * FROM  salaries WHERE salary_Id = ?";
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
-            preparedStatement.setInt(1, id);
-            ResultSet rs_16 = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
+                        preparedStatement.setInt(1, id);
+                        ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs_16.next()) {
-                 Salary sa_child = new Salary();
-                 sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
-                 sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
-                 sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
-                 sa_child.setBonus(rs_16.getDouble("bonus"));
-                 sa_child.setYear(rs_16.getInt("year"));
-                 sa_child.setMonth(rs_16.getInt("month"));
-           
-             
-                return sa_child;
-            }
+                        while (rs_16.next()) {
+                                Salary sa_child = new Salary();
+                                sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
+                                sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
+                                sa_child.setBonus(rs_16.getDouble("bonus"));
+                                sa_child.setYear(rs_16.getInt("year"));
+                                sa_child.setMonth(rs_16.getInt("month"));
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                                return sa_child;
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
         }
 
-        return null;
-    }
-    
-    public List<Salary> getSalaryByYearAndMonth(int m,int y) throws SQLException {
-        List<Salary> sas = new ArrayList<Salary>();
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+        public List<Salary> getSalaryByYearAndMonth(int m, int y) throws SQLException {
+                List<Salary> sas = new ArrayList<Salary>();
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "SELECT * FROM  salaries WHERE year = ? and month = ? ";
+                String sql = "SELECT * FROM  salaries WHERE year = ? and month = ? ";
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
-            preparedStatement.setInt(1, y);
-            preparedStatement.setInt(2, m);
-            ResultSet rs_16 = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
+                        preparedStatement.setInt(1, y);
+                        preparedStatement.setInt(2, m);
+                        ResultSet rs_16 = preparedStatement.executeQuery();
 
-            while (rs_16.next()) {
-                 Salary sa_child = new Salary();
-                 sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
-                 sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
-                 sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
-                 sa_child.setBonus(rs_16.getDouble("bonus"));
-                 sa_child.setYear(rs_16.getInt("year"));
-                 sa_child.setMonth(rs_16.getInt("month"));
-                 sas.add(sa_child);
-                
-            }
-            return sas;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        while (rs_16.next()) {
+                                Salary sa_child = new Salary();
+                                sa_child.setSalary_Id(rs_16.getInt("salary_Id"));
+                                sa_child.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                sa_child.setCoefficient_salary(rs_16.getInt("coefficient_salary"));
+                                sa_child.setBonus(rs_16.getDouble("bonus"));
+                                sa_child.setYear(rs_16.getInt("year"));
+                                sa_child.setMonth(rs_16.getInt("month"));
+                                sas.add(sa_child);
+
+                        }
+                        return sas;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return sas;
         }
 
-        return sas;
-    }
- 
+        public int updateSalary(Salary sa) throws SQLException {
 
-    public int updateSalary(Salary sa) throws SQLException {
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+                String sql = "UPDATE salaries SET coefficient_salary = ?, bonus = ? WHERE salary_Id = ?";
 
-        String sql = "UPDATE salaries SET coefficient_salary = ?, bonus = ? WHERE salary_Id = ?";
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
+                        preparedStatement.setInt(1, sa.getCoefficient_salary());
+                        preparedStatement.setDouble(2, sa.getBonus());
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
-              preparedStatement.setInt(1, sa.getCoefficient_salary());
-            preparedStatement.setDouble(2, sa.getBonus());
-            
-            preparedStatement.setInt(3,sa.getSalary_Id());
-            int rs_16 = preparedStatement.executeUpdate();
-            System.out.println(rs_16);
-            return rs_16;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        preparedStatement.setInt(3, sa.getSalary_Id());
+                        int rs_16 = preparedStatement.executeUpdate();
+                        System.out.println(rs_16);
+                        return rs_16;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
-        return 0;
-    }
 }
