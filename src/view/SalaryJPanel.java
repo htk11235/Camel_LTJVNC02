@@ -136,6 +136,7 @@ public class SalaryJPanel extends javax.swing.JPanel {
         jLabel2_53.setForeground(new java.awt.Color(131, 189, 117));
         jLabel2_53.setText("Salary Screen");
 
+        tableSalary_53.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tableSalary_53.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -160,6 +161,7 @@ public class SalaryJPanel extends javax.swing.JPanel {
             }
         });
         tableSalary_53.setColumnSelectionAllowed(true);
+        tableSalary_53.setShowGrid(true);
         jScrollPane1.setViewportView(tableSalary_53);
         tableSalary_53.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 

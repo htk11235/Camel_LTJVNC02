@@ -114,8 +114,17 @@ import view.DepartmentListJPanel;
                               break;
 
                           case "Salary":
-                              panel = new SalaryJPanel();
+                          {
+                              try {
+                                  panel = new SalaryJPanel();
+                              } catch (SQLException ex) {
+                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                              } catch (ParseException ex) {
+                                  Logger.getLogger(ChuyenManHinh.class.getName()).log(Level.SEVERE, null, ex);
+                              }
+                          }
                               break;
+
                               
                               
                           case "DepartmentList":

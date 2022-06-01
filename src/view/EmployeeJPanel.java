@@ -55,11 +55,11 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         };
         jTable_16.setModel(defaultTableModel_61);
-        defaultTableModel_61.addColumn("id");
+        defaultTableModel_61.addColumn("ID");
         defaultTableModel_61.addColumn("name");
         defaultTableModel_61.addColumn("department");
         defaultTableModel_61.addColumn("position");
-        defaultTableModel_61.addColumn("sex");
+        defaultTableModel_61.addColumn("Gender");
         defaultTableModel_61.addColumn("birthday");
         defaultTableModel_61.addColumn("email");
         defaultTableModel_61.addColumn("tel");
@@ -162,17 +162,29 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         jTable_16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Name", "Deapartment", "Position", "Gender", "Date of Birth", "email", "tell"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTable_16.setShowGrid(true);
         jScrollPane1_16.setViewportView(jTable_16);
+        if (jTable_16.getColumnModel().getColumnCount() > 0) {
+            jTable_16.getColumnModel().getColumn(0).setResizable(false);
+            jTable_16.getColumnModel().getColumn(0).setPreferredWidth(30);
+        }
 
         jButton_Refresh_16.setBackground(new java.awt.Color(255, 255, 255));
         jButton_Refresh_16.setText("Refresh");
@@ -236,13 +248,12 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                         .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Refresh_16)
-                .addContainerGap())
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_Refresh_16)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
