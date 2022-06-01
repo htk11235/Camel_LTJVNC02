@@ -114,7 +114,7 @@ public class PostionDAO {
 
         Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE postions SET postion_Name = ? WHERE position_Id = ?";
+        String sql = "UPDATE positions SET position_Name = ? WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
@@ -136,7 +136,7 @@ public class PostionDAO {
 
         Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "DELETE FROM postions WHERE position_Id = ?";
+        String sql = "DELETE FROM positions WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
