@@ -130,6 +130,7 @@ public class PostionJPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable_16.setShowGrid(true);
         jScrollPane1.setViewportView(jTable_16);
 
         jButton_Refresh_16.setText("Refresh");
