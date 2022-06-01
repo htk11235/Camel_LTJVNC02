@@ -39,6 +39,36 @@ public class TimekeepingDAO {
 
         return timekeepings;
     }
+    public List<Timekeeping> getAllTimekeepingByMT(int m,int y,int id) throws SQLException {
+        List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
+
+        Connection connection_16 = JDBCConnection.getJDBCConnection();
+
+        String sql_16= "select * from timekeeping where (select FORMAT( day_keeping,'yyyy'))  = ? and (select FORMAT( day_keeping,'MM')) = ? and employee_Id = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
+            preparedStatement.setInt(2, m);
+            preparedStatement.setInt(1, y);
+            preparedStatement.setInt(3, id);
+            ResultSet rs_16 = preparedStatement.executeQuery();
+            
+            while (rs_16.next()) {
+                 Timekeeping timekeeping = new Timekeeping();
+                 timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                 timekeeping.setStatus_(rs_16.getString("status_"));
+               
+                timekeepings.add(timekeeping);
+            }
+               return timekeepings;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
      public int addTimekeeping(Timekeeping timekeeping) throws SQLException {
 
         Connection connection = JDBCConnection.getJDBCConnection();
