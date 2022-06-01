@@ -254,7 +254,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     if (userDao.isLoginUser(user)) {
                             user = userDao.getEmployeeByEmail(user.getEmail());
                             MainFrame m = new MainFrame();
-                            m.ChangeName("hi  ," + user.getEmployee_Name());
+                            m.ChangeName("hi, " + user.getEmployee_Name());
                             m.setVisible(true);
                             this.dispose();
                     } else {

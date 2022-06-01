@@ -5,6 +5,7 @@ import controller.ChuyenManHinh;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.border.MatteBorder;
@@ -30,8 +31,9 @@ public class MainFrame extends javax.swing.JFrame {
 
                 controller.setEvent(listDanhMuc);
 
+                DateTimeFormatter formatter12 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 LocalDate myObj = LocalDate.now();
-                jLabel9_datetime1_61.setText("  " + myObj.toString());
+                jLabel9_datetime1_61.setText("  " + myObj.format(formatter12));
 
                 this.setLocationRelativeTo(null);
         }

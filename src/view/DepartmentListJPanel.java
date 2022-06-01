@@ -24,8 +24,8 @@ public class DepartmentListJPanel extends javax.swing.JPanel {
                 departmentService12 = new DepartmentService();
                 defaultTableModel12 = new DefaultTableModel();
                 jTable_12.setModel(defaultTableModel12);
-                defaultTableModel12.addColumn("id");
-                defaultTableModel12.addColumn("name");
+                defaultTableModel12.addColumn("ID");
+                defaultTableModel12.addColumn("NAME");
                 setTableData(departmentService12.getAllDepartment());
 
                 //design table
