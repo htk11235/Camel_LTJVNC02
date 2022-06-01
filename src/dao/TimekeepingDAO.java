@@ -7,162 +7,165 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Postion;
 import model.Timekeeping;
 
 public class TimekeepingDAO {
-    public List<Timekeeping> getAllTimekeeping() throws SQLException {
-        List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+        public List<Timekeeping> getAllTimekeeping() throws SQLException {
+                List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
 
-        String sql_16= "select * from timekeeping";
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
+                String sql_16 = "select * from timekeeping";
 
-            ResultSet rs_16 = preparedStatement.executeQuery();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
 
-            while (rs_16.next()) {
-                 Timekeeping timekeeping = new Timekeeping();
-                 timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs_16.getString("status_"));
-               
-                timekeepings.add(timekeeping);
-            }
+                        ResultSet rs_16 = preparedStatement.executeQuery();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        while (rs_16.next()) {
+                                Timekeeping timekeeping = new Timekeeping();
+                                timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                                timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                                timekeeping.setStatus_(rs_16.getString("status_"));
+
+                                timekeepings.add(timekeeping);
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return timekeepings;
         }
 
-        return timekeepings;
-    }
-    public List<Timekeeping> getAllTimekeepingByMT(int m,int y,int id) throws SQLException {
-        List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
+        public List<Timekeeping> getAllTimekeepingByMT(int m, int y, int id) throws SQLException {
+                List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
 
-        Connection connection_16 = JDBCConnection.getJDBCConnection();
+                Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql_16= "select * from timekeeping where (select FORMAT( day_keeping,'yyyy'))  = ? and (select FORMAT( day_keeping,'MM')) = ? and employee_Id = ?";
+                String sql_16 = "select * from timekeeping where (select FORMAT( day_keeping,'yyyy'))  = ? and (select FORMAT( day_keeping,'MM')) = ? and employee_Id = ?";
 
-        try {
-            PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
-            preparedStatement.setInt(2, m);
-            preparedStatement.setInt(1, y);
-            preparedStatement.setInt(3, id);
-            ResultSet rs_16 = preparedStatement.executeQuery();
-            
-            while (rs_16.next()) {
-                 Timekeeping timekeeping = new Timekeeping();
-                 timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs_16.getString("status_"));
-               
-                timekeepings.add(timekeeping);
-            }
-               return timekeepings;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                try {
+                        PreparedStatement preparedStatement = connection_16.prepareStatement(sql_16);
+                        preparedStatement.setInt(2, m);
+                        preparedStatement.setInt(1, y);
+                        preparedStatement.setInt(3, id);
+                        ResultSet rs_16 = preparedStatement.executeQuery();
+
+                        while (rs_16.next()) {
+                                Timekeeping timekeeping = new Timekeeping();
+                                timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                                timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                                timekeeping.setStatus_(rs_16.getString("status_"));
+
+                                timekeepings.add(timekeeping);
+                        }
+                        return timekeepings;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
         }
 
-        return null;
-    }
-     public int addTimekeeping(Timekeeping timekeeping) throws SQLException {
+        public int addTimekeeping(Timekeeping timekeeping) throws SQLException {
 
-        Connection connection = JDBCConnection.getJDBCConnection();
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        String sql_16 = "INSERT INTO timekeeping VALUES(?,?,?)";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
-            preparedStatement.setInt(1, timekeeping.getEmployee_Id());
-            preparedStatement.setDate(2, (Date) timekeeping.getDay_keeping());
-            preparedStatement.setString(3, timekeeping.getStatus_());
-            
-            int rs_16 = preparedStatement.executeUpdate();
-            System.out.println(rs_16);
-            return rs_16;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
+                String sql_16 = "INSERT INTO timekeeping VALUES(?,?,?)";
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
+                        preparedStatement.setInt(1, timekeeping.getEmployee_Id());
+                        preparedStatement.setDate(2, (Date) timekeeping.getDay_keeping());
+                        preparedStatement.setString(3, timekeeping.getStatus_());
 
-    public int updateTimekeeping(Timekeeping timekeeping) throws SQLException {
-
-        Connection connection = JDBCConnection.getJDBCConnection();
-
-        String sql_16 = "UPDATE timekeeping SET status_ = ? where timekeeping_Id = ? ";
-
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
- 
-            preparedStatement.setString(1, timekeeping.getStatus_());
-            preparedStatement.setInt(2, timekeeping.getTimekeeping_Id());
-
-            int rs_16 = preparedStatement.executeUpdate();
-            System.out.println(rs_16);
-            return rs_16;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-    public  List<Timekeeping> getTimekeepingByDay(Date day) throws SQLException {
-        List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
-        Connection connection = JDBCConnection.getJDBCConnection();
-
-        String sql = "SELECT * FROM  timekeeping WHERE day_keeping = FORMAT( ?,'yyyy-MM-dd')";
-
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setDate(1, day);
-            ResultSet rs_16 = preparedStatement.executeQuery();
-
-            while (rs_16.next()) {
-                Timekeeping timekeeping = new Timekeeping();
-                  timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs_16.getString("status_"));
-               
-                 timekeepings.add(timekeeping);
-                
-            }
-            return timekeepings;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                        int rs_16 = preparedStatement.executeUpdate();
+                        System.out.println(rs_16);
+                        return rs_16;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
 
-        return null;
-    }
-    public  Timekeeping getTimekeepingById(int i) throws SQLException {
-        
-        Connection connection = JDBCConnection.getJDBCConnection();
+        public int updateTimekeeping(Timekeeping timekeeping) throws SQLException {
 
-        String sql = "SELECT * FROM  timekeeping WHERE timekeeping_Id=?";
+                Connection connection = JDBCConnection.getJDBCConnection();
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, i);
-            ResultSet rs_16 = preparedStatement.executeQuery();
+                String sql_16 = "UPDATE timekeeping SET status_ = ? where timekeeping_Id = ? ";
 
-            while (rs_16.next()) {
-                Timekeeping timekeeping = new Timekeeping();
-                  timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
-                 timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
-                  timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
-                 timekeeping.setStatus_(rs_16.getString("status_"));
-               
-                
-                return timekeeping;
-            }
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql_16);
+
+                        preparedStatement.setString(1, timekeeping.getStatus_());
+                        preparedStatement.setInt(2, timekeeping.getTimekeeping_Id());
+
+                        int rs_16 = preparedStatement.executeUpdate();
+                        System.out.println(rs_16);
+                        return rs_16;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+                return 0;
         }
 
-        return null;
-    }
+        public List<Timekeeping> getTimekeepingByDay(Date day) throws SQLException {
+                List<Timekeeping> timekeepings = new ArrayList<Timekeeping>();
+                Connection connection = JDBCConnection.getJDBCConnection();
+
+                String sql = "SELECT * FROM  timekeeping WHERE day_keeping = FORMAT( ?,'yyyy-MM-dd')";
+
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setDate(1, day);
+                        ResultSet rs_16 = preparedStatement.executeQuery();
+
+                        while (rs_16.next()) {
+                                Timekeeping timekeeping = new Timekeeping();
+                                timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                                timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                                timekeeping.setStatus_(rs_16.getString("status_"));
+
+                                timekeepings.add(timekeeping);
+
+                        }
+                        return timekeepings;
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
+        }
+
+        public Timekeeping getTimekeepingById(int i) throws SQLException {
+
+                Connection connection = JDBCConnection.getJDBCConnection();
+
+                String sql = "SELECT * FROM  timekeeping WHERE timekeeping_Id=?";
+
+                try {
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setInt(1, i);
+                        ResultSet rs_16 = preparedStatement.executeQuery();
+
+                        while (rs_16.next()) {
+                                Timekeeping timekeeping = new Timekeeping();
+                                timekeeping.setTimekeeping_Id(rs_16.getInt("timekeeping_Id"));
+                                timekeeping.setEmployee_Id(rs_16.getInt("employee_Id"));
+                                timekeeping.setDay_keeping(rs_16.getDate("day_keeping"));
+                                timekeeping.setStatus_(rs_16.getString("status_"));
+
+                                return timekeeping;
+                        }
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+
+                return null;
+        }
 }
