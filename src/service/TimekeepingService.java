@@ -30,4 +30,7 @@ public class TimekeepingService {
     public  Timekeeping getTimekeepingById(int i) throws SQLException {
         return td_16.getTimekeepingById(i);
     }
+    public List<Timekeeping> getAllTimekeepingByMT(int m,int y,int id) throws SQLException {
+        return  td_16.getAllTimekeepingByMT(m, y, id);
+    }
 }

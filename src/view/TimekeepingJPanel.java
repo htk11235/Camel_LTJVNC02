@@ -33,7 +33,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private TimekeepingService timekeepingService;
 
     DefaultTableModel defaultTableModel;
-    
+
     public TimekeepingJPanel() throws SQLException, ParseException {
         employeeService = new EmployeeService();
         postionService = new PostionService();
@@ -57,7 +57,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         jTable1_16.setOpaque(true);
         jTable1_16.setFillsViewportHeight(true);
         jTable1_16.setBackground(new Color(255, 255, 255));
-        
+
         setTableData("25/5/2022");
 
     }
@@ -73,7 +73,7 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         timekeepings = timekeepingService.getTimekeepingByDay(new java.sql.Date(date.getTime()));
         Timekeeping timekeeping = new Timekeeping();
         for (Timekeeping i : timekeepings) {
-            model.addRow(new Object[]{i.getTimekeeping_Id(),i.getEmployee_Id(),
+            model.addRow(new Object[]{i.getTimekeeping_Id(), i.getEmployee_Id(),
                 employeeService.getEmployeeById(i.getEmployee_Id()).getEmployee_Name(),
                 (i.getStatus_().equals("Yes") ? true : false)
             });
@@ -266,20 +266,20 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
         for (int i = 0; i < model.getRowCount(); i++) {
             try {
                 timekeeping.setTimekeeping_Id((int) model.getValueAt(i, 0));
-                timekeeping.setStatus_(model.getValueAt(i, 3).toString().equals("true")?"Yes":"No");
-                System.out.println(timekeeping.getStatus_());
-                System.out.println(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()));
-                if(!(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()))){
-                    if(timekeepingService.updateTimekeeping(timekeeping)==1){
-                        
-                        System.out.println("Khoa");}
-                    System.out.println("Khoa1");
+                timekeeping.setStatus_(model.getValueAt(i, 3).toString().equals("true") ? "Yes" : "No");
+
+                if (!(timekeeping.getStatus_().equals(timekeepingService.getTimekeepingById(timekeeping.getTimekeeping_Id()).getStatus_()))) {
+                    if (timekeepingService.updateTimekeeping(timekeeping) == 1) {
+
+                        System.out.println("Khoa");
+                    }
+
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(TimekeepingJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
     }//GEN-LAST:event_jButton_Save_16ActionPerformed
 
     private void jDateChooser_16PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser_16PropertyChange
@@ -322,15 +322,15 @@ public class TimekeepingJPanel extends javax.swing.JPanel {
     private void jButton4_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_16ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(true,i,3);
+            model.setValueAt(true, i, 3);
         }
-        
+
     }//GEN-LAST:event_jButton4_16ActionPerformed
 
     private void jButton3_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_16ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1_16.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(false,i,3);
+            model.setValueAt(false, i, 3);
         }
     }//GEN-LAST:event_jButton3_16ActionPerformed
 

@@ -88,7 +88,7 @@ public class SalaryDAO {
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
             preparedStatement.setInt(1, y);
-            preparedStatement.setInt(1, m);
+            preparedStatement.setInt(2, m);
             ResultSet rs_16 = preparedStatement.executeQuery();
 
             while (rs_16.next()) {
@@ -107,7 +107,7 @@ public class SalaryDAO {
             e.printStackTrace();
         }
 
-        return null;
+        return sas;
     }
  
 
@@ -115,15 +115,14 @@ public class SalaryDAO {
 
         Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "UPDATE salaries SET coefficient_salary = ?, bonus = ?, year = ?, month =? WHERE salary_Id = ?";
+        String sql = "UPDATE salaries SET coefficient_salary = ?, bonus = ? WHERE salary_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
               preparedStatement.setInt(1, sa.getCoefficient_salary());
             preparedStatement.setDouble(2, sa.getBonus());
-            preparedStatement.setInt(3, sa.getYear());
-            preparedStatement.setInt(4, sa.getMonth());
-            preparedStatement.setInt(5,sa.getSalary_Id());
+            
+            preparedStatement.setInt(3,sa.getSalary_Id());
             int rs_16 = preparedStatement.executeUpdate();
             System.out.println(rs_16);
             return rs_16;

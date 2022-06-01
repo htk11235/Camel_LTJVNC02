@@ -96,18 +96,33 @@ begin
 	if not exists (select * from deleted)
 		--insert
 		begin
-			DECLARE @z INT = 0;
 			DECLARE @t INT = 0;
-			WHILE @z < 10
-			BEGIN
 				WHILE @t < 12
 				BEGIN
 					insert into salaries values
-						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-5+@z,@t+1)
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-5,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-4,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-3,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-2,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))-1,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy')),@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))+1,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))+2,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))+3,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))+4,@t+1)
+					insert into salaries values
+						((select employee_Id from inserted),3,0,(select FORMAT( GETDATE(),'yyyy'))+5,@t+1)
 					set @t=@t+1
 				END;
-				set @z=@z+1
-			END;
 		end;
 	else
 		if not exists (select * from inserted)
@@ -149,6 +164,4 @@ insert into departments values
 go
 insert into employees values
 	('Sub acc','1','3','F','12/10/2002','1','000','1')
-
-
-
+	
