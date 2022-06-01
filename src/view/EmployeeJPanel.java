@@ -129,11 +129,11 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         jTextField_search_16 = new javax.swing.JTextField();
         jScrollPane1_16 = new javax.swing.JScrollPane();
         jTable_16 = new javax.swing.JTable();
-        jButton_Refresh_16 = new javax.swing.JButton();
         jButton_Add_16 = new javax.swing.JButton();
         jButton_Edit_16 = new javax.swing.JButton();
         jButton_Del_16 = new javax.swing.JButton();
         jLabel_DpScreen_16 = new javax.swing.JLabel();
+        jButton_Refresh1_16 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(899, 598));
 
@@ -159,7 +159,8 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable_16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTable_16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable_16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTable_16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -171,16 +172,9 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTable_16.setShowGrid(true);
         jScrollPane1_16.setViewportView(jTable_16);
-
-        jButton_Refresh_16.setBackground(new java.awt.Color(255, 255, 255));
-        jButton_Refresh_16.setText("Refresh");
-        jButton_Refresh_16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_Refresh_16ActionPerformed(evt);
-            }
-        });
 
         jButton_Add_16.setBackground(new java.awt.Color(40, 133, 55));
         jButton_Add_16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -218,6 +212,16 @@ public class EmployeeJPanel extends javax.swing.JPanel {
         jLabel_DpScreen_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoir_group.png"))); // NOI18N
         jLabel_DpScreen_16.setText("Employee Screen");
 
+        jButton_Refresh1_16.setBackground(new java.awt.Color(226, 226, 226));
+        jButton_Refresh1_16.setForeground(new java.awt.Color(51, 51, 51));
+        jButton_Refresh1_16.setText("Refresh");
+        jButton_Refresh1_16.setBorder(null);
+        jButton_Refresh1_16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Refresh1_16ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,24 +229,24 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel_DpScreen_16)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Refresh_16)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel_DpScreen_16)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton_Refresh1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,15 +255,15 @@ public class EmployeeJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_search_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Refresh_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton_Refresh1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                .addComponent(jScrollPane1_16, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Add_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Edit_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Del_16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -270,14 +274,6 @@ public class EmployeeJPanel extends javax.swing.JPanel {
     private void jTextField_search_16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_search_16KeyReleased
         searchTable(jTextField_search_16.getText());
     }//GEN-LAST:event_jTextField_search_16KeyReleased
-
-    private void jButton_Refresh_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Refresh_16ActionPerformed
- try {
-                refreshTableData(employeeService_61.getAllEmployee());
-            } catch (SQLException ex) {
-                Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton_Refresh_16ActionPerformed
 
     private void jButton_Add_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_16ActionPerformed
         Emp_Add employee_Add = new Emp_Add();
@@ -319,12 +315,20 @@ public class EmployeeJPanel extends javax.swing.JPanel {
             jTextField_search_16.setText("Search");
     }//GEN-LAST:event_jTextField_search_16FocusLost
 
+    private void jButton_Refresh1_16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Refresh1_16ActionPerformed
+        try {
+                refreshTableData(employeeService_61.getAllEmployee());
+            } catch (SQLException ex) {
+                Logger.getLogger(EmployeeJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton_Refresh1_16ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Add_16;
     private javax.swing.JButton jButton_Del_16;
     private javax.swing.JButton jButton_Edit_16;
-    private javax.swing.JButton jButton_Refresh_16;
+    private javax.swing.JButton jButton_Refresh1_16;
     private javax.swing.JLabel jLabel_DpScreen_16;
     private javax.swing.JScrollPane jScrollPane1_16;
     private javax.swing.JTable jTable_16;

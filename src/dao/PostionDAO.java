@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dao;
 
 import model.Postion;
@@ -136,7 +133,7 @@ public class PostionDAO {
 
         Connection connection_16 = JDBCConnection.getJDBCConnection();
 
-        String sql = "DELETE FROM postions WHERE position_Id = ?";
+        String sql = "DELETE FROM positions WHERE position_Id = ?";
 
         try {
             PreparedStatement preparedStatement = connection_16.prepareStatement(sql);
